@@ -70,7 +70,7 @@
                 font-size: 14px;
                 border-radius: 2px;
             }
-            
+
         </style>
 
         <div style="width: 100%; background-color:#F0F0F0">
@@ -95,7 +95,7 @@
                     <p class="w3-left">LOGO</p>
                     <p class="w3-right">
                     <i class="fa fa-search"></i>
-                    <a href="cart.html" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"></a>
+                    <i class="fa fa-shopping-cart w3-margin-right"></i>
                     </p>
                 </header>
             </div>
@@ -117,36 +117,15 @@
         </div>
 
    
- 
     <br>
     <div style="width: 1170px; margin: auto;">
-    <h1 class="w3-xlarge w3-container">MY ACCOUNT</h1>
-    <p class="w3-container" style="color: #9b9b9b">ACCOUNT MANAGEMENT</p>
-    </div>
-    <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h4>LOGIN</h4>
-    <form action="#" method="post">
-    
-        <input class="loginfields" type="text" name="username" id="username" placeholder="Username or email address *"><br>
-        <br>
-        <input class="loginfields" type="password" name="password" id="password" placeholder="Password *"><br>
-        <br>
-		<input class="loginbutton" type="submit" value="Log in">
-    </form>
+    Profile Picture
     <br>
-    <a href="#" class="w3-hover-opacity">Lost your password?</a>
-    <br><br>
-    <h4>REGISTER</h4>
-    <form action="#" method="post">
-    
-        <input class="loginfields" type="text" name="username" id="username" placeholder="Username *"><br>
-        <br>
-        <input class="loginfields" type="text" name="emailaddress" id="emailaddress" placeholder="Email address *"><br>
-        <br>
-        <input class="loginfields" type="password" name="password" id="password" placeholder="Password *"><br>
-        <br>
-		<input class="loginbutton" type="submit" value="Register">
-    </form>
+    SideNavBar with Navigation Tabs
+    <br>
+    https://www.w3schools.com/howto/howto_js_collapse_sidebar.asp
+    <br>
+    https://www.w3schools.com/w3css/w3css_tabulators.asp
     </div>
     <br>
     <br>
@@ -173,7 +152,7 @@
             <div class="w3-col s3 w3-justify">
                 <h4>ACCOUNT</h4>
                 <p><a href="login.html" class="w3-hover-opacity">My Account</a></p>
-                <p><a href="cart.html" class="w3-hover-opacity">Track My Order</a></p>
+                <p><a href="#" class="w3-hover-opacity">Track My Order</a></p>
                 <p><a href="#" class="w3-hover-opacity">View Cart</a></p>
                 <p><a href="#" class="w3-hover-opacity">Forgot Password</a></p>
             
@@ -187,6 +166,25 @@
     <div style="width: 1170px; margin: auto;">
         <p>Copyright Text</p>
     </div>
+
+    <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
 
     </body>
 </html>
