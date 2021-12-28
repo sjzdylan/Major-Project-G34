@@ -63,50 +63,9 @@
                 color: black;
             }
         </style>
-        <?php
-          include 'db_conn.php';
-        ?>
-        <div style="width: 100%; background-color:#F0F0F0">
-            <div style="width: 1170px; margin:auto; background-color:#F0F0F0">
-
-                <ul>
-                    <i class="fa fa-twitter navbaredit w3-large w3-left"></i>
-                    <i class="fa fa-instagram navbaredit w3-large w3-left"></i>
-                
-               
-                   <a class="w3-right navbaredit" href="login.html">MY ACCOUNT</a>
-                </ul>
-
-            </div>
-           
-
-        </div>
-        
-        <div style="width: 100%;">
-            <div style="width: 1170px; margin:auto;">
-                <header class="w3-container w3-xlarge">
-                    <p class="w3-left">MPG34SECUREGROCERIES</p>
-                    <p class="w3-right">
-                      <i class="fa fa-search"></i>
-                      <a href="cart.html" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"></a>
-                    </p>
-                </header>
-            </div>
-           
-
-        </div>
-
-        <div style="width: 100%; border-top: 1px solid #F0F0F0; border-bottom: 1px solid #F0F0F0;">
-            <div style="width: 1170px; margin:auto;">
-
-                <ul>
-                    <li><a href="index.php">SHOP</a></li>
-                </ul>
-
-            </div>
-           
-
-        </div>
+<?php
+include('navbar.php');
+?>
 
         <div style="width: 1170px; margin: auto;">
         <br>
@@ -232,46 +191,9 @@
                   <p> next page / previous page buttons here </p>
                 </div>
             </div>
-        </div>
-        
-       
-
-        <div style="width: 1170px; margin: auto;">
-        <footer class="w3-padding-64 w3-white w3-small w3-center" id="footer" style="border-top: 1px solid #F0F0F0; border-bottom: 1px solid #F0F0F0;">
-            <div class="w3-row-padding">
-
-              <div class="w3-col s3 w3-justify" style='margin-left:10%; margin-right:10%;'>
-                <h4>PAYMENT</h4>
-                <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
-                <img src="images\paymentimg.png">
-               
-              </div>
-        
-              <div class="w3-col s3 w3-justify">
-                <h4>MPG34SECUREGROCERIES</h4>
-                <p><a href="#" class="w3-hover-opacity">About Us</a></p>
-                <p><a href="#" class="w3-hover-opacity">Shopping Guide</a></p>
-                <p><a href="#" class="w3-hover-opacity">FAQs</a></p>
-                <p><a href="#" class="w3-hover-opacity">Terms & Conditions</a></p>
-                <p><a href="#" class="w3-hover-opacity">Privacy Policy</a></p>
-              </div>
-        
-              <div class="w3-col s3 w3-justify">
-                <h4>ACCOUNT</h4>
-                <p><a href="login.html" class="w3-hover-opacity">My Account</a></p>
-                <p><a href="#" class="w3-hover-opacity">Track My Order</a></p>
-                <p><a href="cart.html" class="w3-hover-opacity">View Cart</a></p>
-                <p><a href="#" class="w3-hover-opacity">Forgot Password</a></p>
-             
-                <br>
-                <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
-                <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
-              </div>
-            </div>
-        </footer>
-        </div>
-        <div style="width: 1170px; margin: auto;">
-          <p>MPG34SECUREGROCERIES</p>
-        </div>
+        </div>  
+<?php
+include('footer.php');
+?>
     </body>
 </html>
