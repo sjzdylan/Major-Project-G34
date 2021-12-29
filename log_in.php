@@ -1,0 +1,59 @@
+<?php
+session_start();
+include('dbcon.php');
+use Firebase\Auth\Token\Exception\InvalidToken;
+
+if(isset($_POST['log_in']))
+{
+    $email = $_POST['emailaddress'];
+    $clearTextPassword = $_POST['password'];
+
+    try {
+        $user = $auth->getUserByEmail($email);
+
+        try {
+            $signInResult = $auth->signInWithEmailAndPassword($email, $clearTextPassword);
+            $idTokenString = $signInResult->idToken();
+
+            try {
+                $verifiedIdToken = $auth->verifyIdToken($idTokenString);
+                $uid = $verifiedIdToken->claims()->get('sub');
+
+                $_SESSION['user_id'] = $uid;
+                $_SESSION['idTokenString'] = $idTokenString;
+                
+                $_SESSION['email'] = $email;
+                
+                header('location: index.php');
+               
+
+            } catch (InvalidToken $e) {
+                echo 'The token is invalid: '.$e->getMessage();
+            } catch (\InvalidArgumentException $e) {
+                echo 'The token could not be parsed: '.$e->getMessage();
+            }
+        }
+        catch(Exception $e){
+            $_SESSION = "Wrong Password";
+            header('location: login.php');
+            exit();
+        }
+        
+
+    } 
+    catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+        // echo $e->getMessage();
+        $_SESSION = "Invalid Email Address";
+        header('location: login.php');
+        exit();
+    }
+    
+}
+else
+{
+    $_SESSION = "Not allowed";
+    header('location: login.php');
+    exit();
+}
+
+?>

@@ -59,9 +59,20 @@
                 <ul>
                     <i class="fa fa-twitter navbaredit w3-large w3-left"></i>
                     <i class="fa fa-instagram navbaredit w3-large w3-left"></i>
+                    <a class="w3-right navbaredit" href="login.php">MY ACCOUNT</a>
+                    <?php
+                if(isset($_SESSION['user_id']))
+                {
+                  ?>   <a class="w3-right navbaredit" href="logout.php">LOGOUT</a>
+
+                  <?php
+                }
+                else
+                {
+                    
+                }
+                ?>
                 
-            
-                <a class="w3-right navbaredit" href="login.php">MY ACCOUNT</a>
                 </ul>
 
             </div>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -76,10 +79,8 @@
 
 <?php
 include('navbar.php');
-?>
-
-
-   
+error_reporting(0);
+?> 
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">MY ACCOUNT</h1>
@@ -88,23 +89,50 @@ include('navbar.php');
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
         <p style="font-size: 12px;">USERNAME</p> 
     </div>
-    <p style="font-size: 12px;">user account name</p>
+    <p style="font-size: 12px;"> <?php echo $_SESSION['email']; ?></p>
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 12px;">BILLING INFORMATION</p> 
     </div>
-    <p style="font-size: 12px;">card details</p> 
+    <?php
+    if($_SESSION['carddetails'] != '')
+    {
+        ?> <p style="font-size: 12px;"><?php echo $_SESSION['carddetails']; ?></p> 
+        
+        <?php
+    }
+    else{
+        ?> <p style="font-size: 12px;">You do not have a payment methood associated with the account</p>
+            <p style="font-size: 12px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
+        
+        <?php
+    }
+    ?>
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 12px;">ADDRESS</p> 
     </div>
-    <p style="font-size: 12px;">address details</p> 
+    <?php
+    if($_SESSION['address'] != '')
+    {
+        ?> <p style="font-size: 12px;"><?php echo $_SESSION['address']; ?></p> 
+
+        <?php
+    }
+    else{
+        ?> <p style="font-size: 12px;">You do not have an address associated with the account</p>
+            <p style="font-size: 12px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
+        
+        <?php
+    }
+    ?>
+    
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 12px;">PASSWORD CHANGE</p> 
     </div>
     <br>
-    <form action="#" method="post">
+    <form action="changepassword.php" method="post">
 
     <input class="loginfields" type="password" name="oldpassword" id="oldpassword" placeholder="Current Password *"><br>
     <br>
@@ -112,7 +140,7 @@ include('navbar.php');
     <br>
     <input class="loginfields" type="password" name="newpassword" id="newpassword" placeholder="Confirm New Password *"><br>
     <br>
-    <input class="loginbutton" type="submit" value="Save changes">
+    <input class="loginbutton" name="changepassword" type="submit" value="Save changes">
  
     </form>
     

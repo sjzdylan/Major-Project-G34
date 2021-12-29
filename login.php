@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (isset($_SESSION['email'])) {
+    header("location: profile.php");
+}
+else{
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -84,19 +94,19 @@ include('navbar.php');
     </div>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h4>LOGIN</h4>
-    <form action="#" method="post">
+    <form action="log_in.php" method="post">
     
-        <input class="loginfields" type="text" name="username" id="username" placeholder="Username or email address *"><br>
+        <input class="loginfields" type="text" name="emailaddress" id="emailaddress" placeholder="Email address *"><br>
         <br>
         <input class="loginfields" type="password" name="password" id="password" placeholder="Password *"><br>
         <br>
-		<input class="loginbutton" type="submit" value="Log in">
+		<input class="loginbutton" name="log_in"type="submit" value="Log in">
     </form>
     <br>
     <a href="#" class="w3-hover-opacity">Lost your password?</a>
     <br><br>
     <h4>REGISTER</h4>
-    <form action="#" method="post">
+    <form action="register.php" method="post">
     
         <input class="loginfields" type="text" name="username" id="username" placeholder="Username *"><br>
         <br>
@@ -104,7 +114,7 @@ include('navbar.php');
         <br>
         <input class="loginfields" type="password" name="password" id="password" placeholder="Password *"><br>
         <br>
-		<input class="loginbutton" type="submit" value="Register">
+		<input class="loginbutton" name="register" type="submit" value="Register">
     </form>
     </div>
     <br>
