@@ -18,13 +18,13 @@ if(isset($_POST['changepassword']))
     if($updatedUser)
     {
         echo "Password has successfully been changed";
-        header('location: login.php');
+        header('location: profile.php');
 
     }
     else
     {
         echo "Password failed to be changed";
-        header('location: login.php');
+        header('location: profile.php');
     }
 }
 ?>
