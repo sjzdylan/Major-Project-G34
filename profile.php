@@ -134,6 +134,25 @@ error_reporting(0);
         <?php
     }
     ?>
+    <br>
+    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 12px;">ORDER HISTORY</p> 
+    </div>
+    <?php
+    if($_SESSION['orderhistory'] != '')
+    {
+        ?> 
+            <p style="font-size: 12px;"><a href="orderhistory.php" class="w3-hover-opacity">View Order History</a></p>
+
+        <?php
+    }
+    else{
+        ?> 
+            <p style="font-size: 12px;">You have not made any purchases on your account before</p>
+        
+        <?php
+    }
+    ?>
     
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">

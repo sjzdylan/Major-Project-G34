@@ -34,8 +34,12 @@ $_SESSION["address"] = $fetchdata;
             }
 </style>
 <body>
-<div class="w3-container" style="width: 1170px; margin: auto;">
 
+    <br>
+    <div class="w3-container" style="width: 1170px; margin: auto;">
+    <h1 class="w3-xlarge">ADDRESS</h1>
+    <p style="color: #9b9b9b;">YOUR ADDRESS IS WHERE YOUR ORDER WILL BE DELIVERED TO</p>
+    <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 12px;">CURRENT ADDRESS</p> 
     </div>
@@ -51,7 +55,8 @@ $_SESSION["address"] = $fetchdata;
     <input class="loginbutton" name="changeaddress" type="submit" value="Save changes">
  
     </form>
-</div>
+    </div>
+
 
 </div>
 
