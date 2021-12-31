@@ -161,11 +161,11 @@ error_reporting(0);
     <br>
     <form action="changepassword.php" method="post">
 
-    <input class="loginfields" type="password" name="oldpassword" id="oldpassword" placeholder="Current Password *"><br>
+    <input class="loginfields" type="password" name="oldpassword" id="oldpassword" placeholder="Current Password *" required><br>
     <br>
-    <input class="loginfields" type="password" name="newpassword" id="newpassword" placeholder="New Password *"><br>
+    <input class="loginfields" type="password" name="newpassword" id="newpassword" placeholder="New Password *" required><br>
     <br>
-    <input class="loginfields" type="password" name="newpassword" id="newpassword" placeholder="Confirm New Password *"><br>
+    <input class="loginfields" type="password" name="confirmnewpassword" id="newpassword" placeholder="Confirm New Password *" required><br>
     <br>
     <input class="loginbutton" name="changepassword" type="submit" value="Save changes">
  
