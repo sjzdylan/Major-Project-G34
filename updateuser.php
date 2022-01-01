@@ -9,7 +9,10 @@ if(isset($_POST['deleteuser']))
 
     try{
         $auth->deleteUser($uid);
-        
+
+        $ref_table = "userinfo/".$uid;
+        $deletequery_result = $database->getReference($ref_table)->remove();
+
         echo "User has been deleted successfully";
         header('location: usermanagement.php');
     }
