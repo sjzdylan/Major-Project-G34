@@ -98,7 +98,9 @@ include('navbar.php');
     
         <input class="loginfields" type="text" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
         <br>
-        <input class="loginfields" type="password" name="password" id="password" placeholder="Password *" required><br>
+        <input class="loginfields" type="password" name="password" id="password1" placeholder="Password *" required>
+        <i class="fa fa-eye" id="togglePassword1" style="margin-left: -30px; cursor: pointer;"></i>
+        <br>
         <br>
 		<input class="loginbutton" name="log_in"type="submit" value="Log in">
     </form>
@@ -110,15 +112,42 @@ include('navbar.php');
     
         <input class="loginfields" type="text" name="username" id="username" placeholder="Username *" required><br>
         <br>
-        <input class="loginfields" type="text" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
+        <input class="loginfields" type="email" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
         <br>
-        <input class="loginfields" type="password" name="password" id="password" placeholder="Password *" required><br>
+        <input class="loginfields" type="password" name="password" id="password2" placeholder="Password *" minlength="6" required>
+        <i class="fa fa-eye" id="togglePassword2" style="margin-left: -30px; cursor: pointer;"></i>
+        <br>
         <br>
 		<input class="loginbutton" name="register" type="submit" value="Register">
     </form>
     </div>
     <br>
     <br>
+
+<script>
+const togglePassword1 = document.querySelector('#togglePassword1');
+const password1 = document.querySelector('#password1');
+ 
+  togglePassword1.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password1.getAttribute('type') === 'password' ? 'text' : 'password';
+    password1.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+const togglePassword2 = document.querySelector('#togglePassword2');
+const password2 = document.querySelector('#password2');
+ 
+  togglePassword2.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+    password2.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+</script>
+
 <?php
 include('footer.php');
 ?>
