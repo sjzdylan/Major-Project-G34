@@ -8,7 +8,7 @@ include('dbcon.php');
 
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
 
-$_SESSION["address"] = $fetchdata;
+$_SESSION["address"] = $fetchdata['address'];
 
 ?>
 
@@ -44,7 +44,7 @@ $_SESSION["address"] = $fetchdata;
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 12px;">CURRENT ADDRESS</p> 
     </div>
-    <p style="font-size: 12px;"><?php echo implode("", $_SESSION['address']); ?></p>
+    <p style="font-size: 12px;"><?php echo $_SESSION['address']; ?></p>
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 12px;">UPDATE ADDRESS</p>

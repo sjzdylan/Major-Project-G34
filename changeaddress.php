@@ -13,10 +13,11 @@ if(isset($_POST['changeaddress']))
         'address'=>$newaddress,
     ];
     
-    $database->getReference('userinfo')->getChild($_SESSION['user_id'])->set($postData);
+    $database->getReference('userinfo')->getChild($_SESSION['user_id'])->update($postData);
 
     if($postRef_result)
     {
+        
         echo "Address has successfully been updated";
         header('location: profile.php');
 

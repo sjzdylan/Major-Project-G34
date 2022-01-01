@@ -95,7 +95,6 @@ include('navbar.php');
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h4>LOGIN</h4>
     <form action="log_in.php" method="post">
-    
         <input class="loginfields" type="email" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
         <br>
         <input class="loginfields" type="password" name="password" id="password1" placeholder="Password *" required>

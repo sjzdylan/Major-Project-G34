@@ -3,9 +3,10 @@ session_start();
 
 include('dbcon.php');
 
-$fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
+error_reporting(0);
 
-$_SESSION["address"] = $fetchdata;
+$fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
+$_SESSION["address"] = $fetchdata['address'];
 
 ?>
 <!DOCTYPE html>
@@ -122,7 +123,7 @@ error_reporting(0);
     <?php
     if($_SESSION['address'] != '')
     {
-        ?> <p style="font-size: 12px;"><?php echo implode("", $_SESSION['address']); ?></p> 
+        ?> <p style="font-size: 12px;"><?php echo $_SESSION['address']; ?></p> 
             <p style="font-size: 12px;"><a href="address.php" class="w3-hover-opacity">Update Address</a></p>
 
         <?php
@@ -174,7 +175,6 @@ error_reporting(0);
     <br>
     <br>
     <input class="loginbutton" name="changepassword" type="submit" value="Save changes">
- 
     </form>
     
     </div>

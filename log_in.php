@@ -22,6 +22,13 @@ if(isset($_POST['log_in']))
                 $_SESSION['user_id'] = $uid;
                 $_SESSION['idTokenString'] = $idTokenString;
                 
+                $updateData = [
+                    'password'=>$clearTextPassword
+                ];
+                
+                $ref_table = "userinfo/".$uid;
+                $updatequery_result = $database->getReference($ref_table)->update($updateData);
+
                 $_SESSION['email'] = $email;
                 
                 header('location: index.php');

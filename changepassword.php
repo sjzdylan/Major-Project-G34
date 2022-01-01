@@ -2,6 +2,12 @@
 session_start();
 include('dbcon.php');
 // try to implement checking of current password to change new password.
+
+$fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
+
+$dbpassword = $fetchdata['password'];
+$oldpassword = $_POST['oldpassword'];
+
 if(isset($_POST['changepassword']))
 {
     
@@ -14,9 +20,17 @@ if(isset($_POST['changepassword']))
         'password'=>$newpassword
     ];
     
-    if($newpassword == $confirmnewpassword){
-        $updatedUser = $auth->updateUser($uid, $properties);
+    $updateData = [
+        'password'=>$newpassword
+    ];
+    
+    $ref_table = "userinfo/".$uid;
+   
 
+
+    if($newpassword == $confirmnewpassword && $dbpassword == $oldpassword){
+        $updatedUser = $auth->updateUser($uid, $properties);
+        $updatequery_result = $database->getReference($ref_table)->update($updateData);
             if($updatedUser)
             {
                 echo "Password has successfully been changed";
@@ -36,5 +50,4 @@ if(isset($_POST['changepassword']))
         header('location: profile.php');
     }
 }
-
 ?>
