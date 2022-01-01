@@ -96,7 +96,7 @@ include('navbar.php');
     <h4>LOGIN</h4>
     <form action="log_in.php" method="post">
     
-        <input class="loginfields" type="text" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
+        <input class="loginfields" type="email" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
         <br>
         <input class="loginfields" type="password" name="password" id="password1" placeholder="Password *" required>
         <i class="fa fa-eye" id="togglePassword1" style="margin-left: -30px; cursor: pointer;"></i>
