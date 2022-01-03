@@ -27,14 +27,12 @@
                 <p><a href="aboutus.php" class="w3-hover-opacity">About Us</a></p>
                 <p><a href="#" class="w3-hover-opacity">Shopping Guide</a></p>
                 <p><a href="#" class="w3-hover-opacity">FAQs</a></p>
-                <p><a href="#" class="w3-hover-opacity">Terms & Conditions</a></p>
-                <p><a href="#" class="w3-hover-opacity">Privacy Policy</a></p>
+                <p><a href="#" class="w3-hover-opacity">Informatics</a></p>
               </div>
         
               <div class="w3-col s3 w3-justify">
                 <h4>ACCOUNT</h4>
                 <p><a href="login.php" class="w3-hover-opacity">My Account</a></p>
-                <p><a href="#" class="w3-hover-opacity">Track My Order</a></p>
                 <p><a href="cart.php" class="w3-hover-opacity">View Cart</a></p>
                 <?php
                 if(isset($_SESSION['user_id']))

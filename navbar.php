@@ -51,6 +51,7 @@
             .navbaredit:hover {
                 color: black;
             }
+
         </style>
 
 
@@ -58,8 +59,6 @@
             <div style="width: 1170px; margin:auto; background-color:#F0F0F0">
 
                 <ul>
-                    <i class="fa fa-twitter navbaredit w3-large w3-left"></i>
-                    <i class="fa fa-instagram navbaredit w3-large w3-left"></i>
                     <a class="w3-right navbaredit" href="login.php">MY ACCOUNT</a>
                     <?php
                 if(isset($_SESSION['user_id']))
@@ -84,7 +83,7 @@
         <div style="width: 100%;">
             <div style="width: 1170px; margin:auto;">
                 <header class="w3-container w3-xlarge">
-                    <p class="w3-left">MPG34SECUREGROCERIES</p>
+                    <p class="w3-left"><a href="index.php" style="text-decoration: none;">MPG34SECUREGROCERIES</a></p>
                     <p class="w3-right">
                     <i class="fa fa-search"></i>
                     <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"></a>

@@ -14,6 +14,11 @@ include("navbar.php");
         background-color: inherit;
         text-decoration: underline;
         cursor: pointer;
+     }
+
+    .productimage{
+        height: 96px;
+        width: 96px;
     }
 </style>
 <body>
@@ -59,7 +64,7 @@ include("navbar.php");
                     ?>
                     <tr style="font-size: 12px; text-align: left;">
                     <td><?=$i++;?></td>
-                    <td><?=$row['Image'];?></td>
+                    <td><img class="productimage" src="<?=$row['Image'];?>"></img></td>
                     <td><?=$row['Product Name'];?></td>
                     <td><?=$row['Quantity'];?></td>
                     <td><?=$row['Price'];?></td>
