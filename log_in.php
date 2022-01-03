@@ -32,8 +32,10 @@ if(isset($_POST['log_in']))
                 $_SESSION['idTokenString'] = $idTokenString;
                 }
                 
+                $hashedpassword = password_hash($clearTextPassword, PASSWORD_DEFAULT);
+
                 $updateData = [
-                    'password'=>$clearTextPassword
+                    'password'=>$hashedpassword
                 ];
                 
                 $ref_table = "userinfo/".$uid;

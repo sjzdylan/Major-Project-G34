@@ -93,7 +93,20 @@ error_reporting(0);
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">MY ACCOUNT</h1>
     <p style="color: #9b9b9b;">EDIT ACCOUNT DETAILS</p>
-    <br>
+    <?php 
+    if(isset($_SESSION['status']))
+    {
+
+    }
+    else{
+        ?>
+        <br>
+        <?php
+    }
+    
+    ?>
+    <p style="font-size: 12px; font-weight: bold;"><?php echo $_SESSION['status'];?></p>
+
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
         <p style="font-size: 12px;">USERNAME</p> 
     </div>
@@ -220,6 +233,7 @@ const password3 = document.querySelector('#password3');
 
 <?php
     include('footer.php');
+    unset($_SESSION['status']);
 ?>
     </body>
 </html>
