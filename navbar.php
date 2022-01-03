@@ -72,7 +72,9 @@
                     
                 }
                 ?>
-                
+                <a class="w3-left navbaredit" href="indexchi.php">CHINESE</a>
+                <a class="w3-left navbaredit" href="login.php">MALAY</a>
+                <a class="w3-left navbaredit" href="login.php">TAMIL</a>
                 </ul>
 
             </div>
@@ -98,7 +100,7 @@
             <div style="width: 1170px; margin:auto;">
 
                 <ul>
-                    <li><a href="index.php">SHOP</a></li>
+                    <li><a href="index.php">STORE</a></li>
                     <?php
                          if(isset($_SESSION['verified_admin']))
                          {
