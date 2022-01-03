@@ -2,6 +2,7 @@
 session_start();
 
 include('dbcon.php');
+include("adminauth.php");
 
 if(isset($_POST['deleteuser']))
 {

@@ -100,6 +100,15 @@
 
                 <ul>
                     <li><a href="index.php">SHOP</a></li>
+                    <?php
+                         if(isset($_SESSION['verified_admin']))
+                         {
+                             ?>
+                                    <li><a href="productmanagement.php">PRODUCTS</a></li>
+                                    <li><a href="usermanagement.php">USERS</a></li>
+                             <?php
+                         }
+                    ?>
                 </ul>
 
             </div>

@@ -19,8 +19,18 @@ if(isset($_POST['log_in']))
                 $verifiedIdToken = $auth->verifyIdToken($idTokenString);
                 $uid = $verifiedIdToken->claims()->get('sub');
 
+                $claims = $auth->getUser($uid)->customClaims;
+                if(isset($claims['admin']) == true)
+                {   
+                    $_SESSION['verified_admin'] = true;
+                    $_SESSION['user_id'] = $uid;
+                    $_SESSION['idTokenString'] = $idTokenString;
+                }
+                elseif($claims == null)
+                {
                 $_SESSION['user_id'] = $uid;
                 $_SESSION['idTokenString'] = $idTokenString;
+                }
                 
                 $updateData = [
                     'password'=>$clearTextPassword
@@ -28,6 +38,8 @@ if(isset($_POST['log_in']))
                 
                 $ref_table = "userinfo/".$uid;
                 $updatequery_result = $database->getReference($ref_table)->update($updateData);
+
+               // $auth->setCustomUserClaims($uid, ['admin' => true]);
 
                 $_SESSION['email'] = $email;
                 
