@@ -15,8 +15,19 @@ if(isset($_POST['register']))
 
     ];
 
+$uppercase = preg_match('@[A-Z]@', $password);
+$lowercase = preg_match('@[a-z]@', $password);
+$number    = preg_match('@[0-9]@', $password);
+
+if($uppercase && $lowercase && $number && strlen($password) >= 6) 
+{
+
+      
     $createdUser = $auth->createUser($userProperties);
 
+
+    
+   
     if($createdUser)
     {
         echo "Account has successfully been added";
@@ -28,5 +39,11 @@ if(isset($_POST['register']))
         echo "Account failed to be added";
         header('location: login.php');
     }
+}
+else
+{
+    $_SESSION['registermsg'] = "Password should be a minimum of 6 characters with at least a number, uppercase, and lowercase character.";
+    header("location: login.php");
+}
 }
 ?>

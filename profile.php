@@ -96,7 +96,9 @@ error_reporting(0);
     <?php 
     if(isset($_SESSION['status']))
     {
-
+        ?>
+            <p style="font-size: 12px; font-weight: bold;"><?php echo $_SESSION['status'];?></p>
+        <?php
     }
     else{
         ?>
@@ -105,7 +107,6 @@ error_reporting(0);
     }
     
     ?>
-    <p style="font-size: 12px; font-weight: bold;"><?php echo $_SESSION['status'];?></p>
 
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
         <p style="font-size: 12px;">USERNAME</p> 

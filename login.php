@@ -91,7 +91,22 @@ include('navbar.php');
     <div style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge w3-container">MY ACCOUNT</h1>
     <p class="w3-container" style="color: #9b9b9b">ACCOUNT LOGIN/REGISTER</p>
+    <?php 
+    if(isset($_SESSION['registermsg']))
+    {
+        ?>
+            <p class="w3-container" style="font-size: 12px; font-weight: bold;"><?php echo $_SESSION['registermsg'];?></p>
+        <?php
+    }
+    else{
+        ?>
+
+        <?php
+    }
+    
+    ?>
     </div>
+ 
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h4>LOGIN</h4>
     <form action="log_in.php" method="post">
@@ -149,6 +164,7 @@ const password2 = document.querySelector('#password2');
 
 <?php
 include('footer.php');
+unset($_SESSION['registermsg']);
 ?>
     </body>
 </html>
