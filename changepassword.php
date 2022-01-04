@@ -29,6 +29,14 @@ if(isset($_POST['changepassword']))
     $ref_table = "userinfo/".$uid;
    
 
+    $uppercase = preg_match('@[A-Z]@', $newpassword);
+    $lowercase = preg_match('@[a-z]@', $newpassword);
+    $number    = preg_match('@[0-9]@', $newpassword);
+    
+    if($uppercase && $lowercase && $number && strlen($newpassword) >= 6) 
+    {
+    
+          
 
     if($newpassword == $confirmnewpassword)
     {
@@ -62,5 +70,8 @@ if(isset($_POST['changepassword']))
         $_SESSION['status'] = "New Password and Confirm New Password is not the same";
         header('location: profile.php');
     }
+    $_SESSION['status'] = "Password should be a minimum of 6 characters with at least a number, uppercase, and lowercase character.";
+    header("location: profile.php");
+}
 }
 ?>
