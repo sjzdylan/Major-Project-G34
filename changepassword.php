@@ -70,8 +70,12 @@ if(isset($_POST['changepassword']))
         $_SESSION['status'] = "New Password and Confirm New Password is not the same";
         header('location: profile.php');
     }
+    
+}
+else
+{
     $_SESSION['status'] = "Password should be a minimum of 6 characters with at least a number, uppercase, and lowercase character.";
-    header("location: profile.php");
+    header('location: profile.php');
 }
 }
 ?>

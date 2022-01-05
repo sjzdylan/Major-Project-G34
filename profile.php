@@ -87,7 +87,6 @@ $_SESSION["address"] = $fetchdata['address'];
                 font-size: 14px;
                 border-radius: 2px;
             }
-            
 
         </style>
 
@@ -103,10 +102,11 @@ error_reporting(0);
     if(isset($_SESSION['status']))
     {
         ?>
-            <p style="font-size: 12px; font-weight: bold;"><?php echo $_SESSION['status'];?></p>
+            <p class="message" style="font-size: 14px; font-weight: bold;"><?php echo $_SESSION['status'];?></p>
         <?php
     }
-    else{
+    else
+    {
         ?>
         <br>
         <?php

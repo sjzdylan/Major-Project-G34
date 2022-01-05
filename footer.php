@@ -43,7 +43,7 @@
                 }
                 else
                 {
-                  ?>  <p><a href="#" class="w3-hover-opacity">Forgot Password</a></p>
+                  ?>  <p><a href="forgetpasswordform.php" class="w3-hover-opacity">Forgot Password</a></p>
 
                   <?php
                 }
