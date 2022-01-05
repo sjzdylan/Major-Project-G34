@@ -40,6 +40,16 @@ include("navbar.php");
 }
 .container1{
     padding: 2px 16px;
+    
+}
+.loginbutton {
+                background-color: black;
+                color: white;
+                border: none;
+                cursor: pointer;
+                padding: 4px 10px;
+                font-size: 14px;
+                border-radius: 2px;
 }
 </style>
 <body>
@@ -57,16 +67,22 @@ include("navbar.php");
             foreach($fetchdata as $key => $row)
             {
 
-                ?>    <div class="card1 w3-col l3 s6">
+                    ?>      
+                    
+                        <div class="card1 w3-col l3 s6">
                         <tr style="font-size: 12px">
                         <td><img class="productimage" src="<?=$row['Image'];?>"></img></td>
                         <div class="container1">
                             <td><p style="text-align:center;"><?=$row['Product Name'];?></p></td>
                         <td><p style="text-align:center;"><?=$row['Price'];?></p></td>
                         </div>
-                    </div>
-            
-                    
+                        <br><br>
+                        <div style="text-align: center;">
+                        <form action="cart.php" method="post">
+                        <button class="loginbutton" name="addtocart" value="<?=$key;?>" type="submit">Add to Cart</button>
+                        </form>
+                        </div>
+                        </div>
                    
                     <?php
                 }
@@ -88,4 +104,3 @@ include("navbar.php");
 <?php
 include('footer.php');
 ?>
-
