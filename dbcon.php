@@ -5,6 +5,7 @@ require __DIR__.'/vendor/autoload.php';
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\Auth;
 use Kreait\Firebase\Database;
+use Kreait\Firebase\ServiceAccount;
 
 $factory = (new Factory)
     ->withServiceAccount('mpg34groceries-firebase-adminsdk-rrmah-de7d438aa5.json')

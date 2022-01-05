@@ -119,7 +119,7 @@ include('navbar.php');
 		<input class="loginbutton" name="log_in"type="submit" value="Log in">
     </form>
     <br>
-    <a href="#" class="w3-hover-opacity">Lost your password?</a>
+    <a href="forgetpasswordform.php" class="w3-hover-opacity">Lost your password?</a>
     <br><br>
     <h4>REGISTER</h4>
     <form action="register.php" method="post">
