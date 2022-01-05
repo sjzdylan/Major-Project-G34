@@ -3,6 +3,12 @@ session_start();
 
 include('dbcon.php');
 
+if (isset($_SESSION['email'])) {
+}
+else{
+    header("location: login.php");
+}
+
 error_reporting(0);
 
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
