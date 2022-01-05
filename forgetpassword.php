@@ -21,6 +21,6 @@ else
 {
     echo "Email failed to be sent";
 }
-}
+
 
 ?>
