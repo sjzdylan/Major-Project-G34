@@ -49,7 +49,7 @@ include("navbar.php");
                 ?>
                     <form action="updateproduct.php" method="post">
                     <input type="hidden" name="key" value="<?=$key_child;?>">
-                    <input class="loginfields" value="<?=$getdata['Product Name'];?>" type="text" name="productname" required><br>
+                    <input class="loginfields" value="<?=$getdata['Product_Name'];?>" type="text" name="productname" required><br>
                     <br>
                     <input class="loginfields" value="<?=$getdata['Price'];?>" type="text" name="price" required><br>
                     <br>
