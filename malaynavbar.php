@@ -59,11 +59,12 @@
             <div style="width: 1170px; margin:auto; background-color:#F0F0F0">
 
                 <ul>
-                    <a class="w3-right navbaredit" href="login.php">我的账户</a>
+                    <a class="w3-right navbaredit" href="login.php">AKAUN SAYA</a>
                     <?php
                 if(isset($_SESSION['user_id']))
                 {
-                  ?>   <a class="w3-right navbaredit" href="logout.php">推出</a>
+                  ?>   <a class="w3-right navbaredit" href="logout.php">LOG KELUAR
+                  </a>
 
                   <?php
                 }
@@ -72,14 +73,15 @@
                     
                 }
                 ?>
-                <a class="w3-left navbaredit" href="index.php">英文</a>
-                <a class="w3-left navbaredit" href="indexmalay.php">马来</a>
-                <a class="w3-left navbaredit" href="login.php">泰米尔</a>
+                <a class="w3-left navbaredit" href="indexchi.php">CINA</a>
+                <a class="w3-left navbaredit" href="index.php">INGGERIS</a>
+                <a class="w3-left navbaredit" href="login.php">TAMIL</a>
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" rel="stylesheet" />
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.js"></script>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css">
-                <a data-fancybox="gallery" class="w3-left navbaredit" href="images/3.png">用户手册</a>
+                <a data-fancybox="gallery" class="w3-left navbaredit" href="images/4.png">
+BAGAIMANA NAK GUNA</a>
                 </ul>
 
             </div>
@@ -105,13 +107,13 @@
             <div style="width: 1170px; margin:auto;">
 
                 <ul>
-                    <li><a href="index.php">商店</a></li>
+                    <li><a href="index.php">KEDAI</a></li>
                     <?php
                          if(isset($_SESSION['verified_admin']))
                          {
                              ?>
-                                    <li><a href="productmanagement.php">物品</a></li>
-                                    <li><a href="usermanagement.php">USERS</a></li>
+                                    <li><a href="productmanagement.php">PRODUK</a></li>
+                                    <li><a href="usermanagement.php">PENGGUNA</a></li>
                              <?php
                          }
                     ?>
