@@ -73,7 +73,7 @@ include('navbar.php');
     <h1> Enter the product name that you are searching for </h1>
     <br>
     <div class="box">
-        <form action ="searched.php" method="post">
+        <form action ="searched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="Search.." />
             <input class="submitbutton" type="submit" name="searched" value="Search!" />
         </form>
