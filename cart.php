@@ -91,7 +91,7 @@ else{
 <?php
 include('navbar.php');
 
-if(isset($_GET['id']))
+if(isset($_GET['id']) && isset($_SESSION['user_id']))
 {
     $key_child = $_GET['id'];
 
@@ -148,7 +148,7 @@ $fetchdata = $database->getReference($ref_table1)->getValue();
 {
     ?>
   
-  <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT IITEMS IN THE CART</p>
+  <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT ITEMS IN THE CART</p>
 
   <?php
 }
@@ -156,7 +156,7 @@ else
 {
     ?>
 
-    <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT IITEMS IN THE CART</p>
+    <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT NO ITEMS IN THE CART</p>
 
     <?php
 }
@@ -197,15 +197,15 @@ if($fetchdata > 0)
         <img class="productimage" src="<?=$row['Image'];?>"><img>
         </td>
         
-        <td style="width: 451spx; border-bottom: 1px solid #F0F0F0;">
-        <?=$row['Product Name'];?>
+        <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
+        <p><?=$row['Product Name'];?></p>
         </td>
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
         <?=$row['Quantity'];?>
         </td>
 
-        <td style="width: 234px; border-bottom: 1px solid #F0F0F0; text-align: left;">
+        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
         <?=$row['Price'];?>
         </td>
         <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
