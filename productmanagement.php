@@ -65,7 +65,7 @@ include("navbar.php");
                     <tr style="font-size: 12px; text-align: left;">
                     <td><?=$i++;?></td>
                     <td><img class="productimage" src="<?=$row['Image'];?>"></img></td>
-                    <td><?=$row['Product Name'];?></td>
+                    <td><?=$row['Product_Name'];?></td>
                     <td><?=$row['Quantity'];?></td>
                     <td><?=$row['Price'];?></td>
                     <td>
