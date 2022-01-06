@@ -73,7 +73,7 @@ include('navbar.php');
     <h1> Enter the product name that you are searching for </h1>
     <br>
     <div class="box">
-        <form action ="searched.php" method="get">
+        <form action ="searched.php" method="post">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="Search.." />
             <input class="submitbutton" type="submit" name="searched" value="Search!" />
         </form>
@@ -90,7 +90,7 @@ include('navbar.php');
         {
             $querieditem = $_GET['Search'];
             echo $querieditem;
-            $queryfound = $database->getReference('product')->equalTo($querieditem)->getValue();
+            $queryfound = $database->getReference('product')->orderbyChild('Product Name')->equalTo($querieditem)->getValue();
             echo $queryfound;
             if($queryfound > 0)
             {
