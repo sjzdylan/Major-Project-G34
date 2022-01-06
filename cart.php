@@ -101,13 +101,13 @@ if(isset($_GET['id']) && isset($_SESSION['user_id']))
     if($getdata > 0)
     {
         
-         $productname = $getdata['Product Name'];
+         $productname = $getdata['Product_Name'];
          $price = $getdata['Price'];
          $quantity = $getdata['Quantity'];
          $image = $getdata['Image'];
      
          $updateData = [
-             'Product Name'=>$productname,
+             'Product_Name'=>$productname,
              'Price'=>$price,
              'Quantity'=>$quantity,
              'Image'=>$image
@@ -198,7 +198,7 @@ if($fetchdata > 0)
         </td>
         
         <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
-        <p><?=$row['Product Name'];?></p>
+        <p><?=$row['Product_Name'];?></p>
         </td>
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
