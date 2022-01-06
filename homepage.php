@@ -52,7 +52,7 @@ include("navbar.php");
                         <tr style="font-size: 12px">
                         <td><img class="productimage" src="<?=$row['Image'];?>"></img></td>
                         <div class="container1">
-                            <td><p style="text-align:center;"><?=$row['Product Name'];?></p></td>
+                            <td><p style="text-align:center;"><?=$row['Product_Name'];?></p></td>
                         <td><p style="text-align:center;"><?=$row['Price'];?></p></td>
                         </div>
                     </div>
