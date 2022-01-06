@@ -87,7 +87,7 @@
                 <header class="w3-container w3-xlarge">
                     <p class="w3-left"><a href="index.php" style="text-decoration: none;">MPG34SECUREGROCERIES</a></p>
                     <p class="w3-right">
-                    <i class="fa fa-search"></i>
+                    <a href="search.php" class="fa fa-search" style="text-decoration: none;"></a>
                     <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"></a>
                     </p>
                 </header>
