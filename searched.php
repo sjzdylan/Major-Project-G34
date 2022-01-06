@@ -88,12 +88,12 @@ include('navbar.php');
     <?php
         if(isset($_GET['searched']))
         {
-            $_SESSION['querieditem'] = $_GET['Search'];
-            echo $_SESSION['querieditem'];
+            $itemsearched = $_GET['Search'];
+            $upper = ucfirst($itemsearched);
+            $_SESSION['querieditem'] = $upper;
             $queryfound = $database->getReference('product')->orderbyChild('Product_Name')->equalTo($_SESSION['querieditem'])->getValue();
-            if($queryfound > 0)
+            if($queryfound != NULL)
             {
-                $i=1;
                 foreach($queryfound as $key => $row)
                 {
     ?>      
@@ -113,7 +113,7 @@ include('navbar.php');
                 </div>
                 </div>
                        
-                        <?php
+                    <?php
                 }
                 
             }
