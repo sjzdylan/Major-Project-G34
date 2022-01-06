@@ -75,6 +75,11 @@
                 <a class="w3-left navbaredit" href="indexchi.php">CHINESE</a>
                 <a class="w3-left navbaredit" href="login.php">MALAY</a>
                 <a class="w3-left navbaredit" href="login.php">TAMIL</a>
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" rel="stylesheet" />
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.js"></script>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css">
+                <a data-fancybox="gallery" class="w3-left navbaredit" href="images/1.png">HOW TO USE</a>
                 </ul>
 
             </div>
