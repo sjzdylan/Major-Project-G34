@@ -67,7 +67,7 @@ session_start();
             }
         </style>
 <?php
-include('navbar.php');
+include('chinavbar.php');
 ?>
 
         <div style="width: 1170px; margin: auto;">
