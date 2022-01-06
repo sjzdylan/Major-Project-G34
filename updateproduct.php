@@ -33,7 +33,7 @@ if(isset($_POST['updateproduct']))
     $image = $_POST['image'];
 
     $updateData = [
-        'Product Name'=>$productname,
+        'Product_Name'=>$productname,
         'Price'=>$price,
         'Quantity'=>$quantity,
         'Image'=>$image
@@ -65,7 +65,7 @@ if(isset($_POST['addproduct']))
     $image = $_POST['image'];
 
     $postData = [
-        'Product Name'=>$productname,
+        'Product_Name'=>$productname,
         'Price'=>$price,
         'Quantity'=>$quantity,
         'Image'=>$image
