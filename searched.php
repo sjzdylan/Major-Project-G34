@@ -88,42 +88,41 @@ include('navbar.php');
     <?php
         if(isset($_GET['searched']))
         {
-            $querieditem = $_GET['Search'];
-            echo $querieditem;
-            $queryfound = $database->getReference('product')->orderbyChild('Product Name')->equalTo($querieditem)->getValue();
-            echo $queryfound;
+            $_SESSION['querieditem'] = $_GET['Search'];
+            echo $_SESSION['querieditem'];
+            $queryfound = $database->getReference('product')->orderbyChild('Product_Name')->equalTo($_SESSION['querieditem'])->getValue();
             if($queryfound > 0)
             {
                 $i=1;
                 foreach($queryfound as $key => $row)
                 {
-                        ?>      
-                            <div class="card1 w3-col l3 s6">
-                            <tr style="font-size: 12px">
-                            <td><img class="productimage" src="<?=$row['Image'];?>"></img></td>
-                            <div class="container1">
-                                <td><p style="text-align:center;"><?=$row['Product Name'];?></p></td>
-                            <td><p style="text-align:center;"><?=$row['Price'];?></p></td>
-                            </div>
-                            <br><br>
-                            <div style="text-align: center;">
-                            <form action="cart.php" method="post">
-                            <button class="loginbutton" name="addtocart" value="<?=$key;?>" type="submit">Add to Cart</button>
-                            </form>
-                            </div>
-                            </div>
+    ?>      
+                <div class="card1 w3-col l3 s6">
+                <tr style="font-size: 12px">
+                <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
+                <div class="container1">
+                    <td><p style="text-align:center;"><?=$row['Product_Name'];?></p></td>
+                <td><p style="text-align:center;"><?=$row['Price'];?></p></td>
+                </div>
+                <br><br>
+                <div style="text-align: center;">
+                <form action="cart.php" method="post">
+
+                <a href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Add to Cart </a>
+                </form>
+                </div>
+                </div>
                        
                         <?php
-                    }
                 }
+                
+            }
             else
             {
                 echo "No search results";
-                //header('location: profile.php');
             }
         }
         
         ?>
-    ?>
     </body>
 </html>
