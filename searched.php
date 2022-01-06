@@ -89,7 +89,8 @@ include('navbar.php');
         if(isset($_GET['searched']))
         {
             $itemsearched = $_GET['Search'];
-            $upper = ucfirst($itemsearched);
+            $lower = strtolower($itemsearched);
+            $upper = ucfirst($lower);
             $_SESSION['querieditem'] = $upper;
             $queryfound = $database->getReference('product')->orderbyChild('Product_Name')->equalTo($_SESSION['querieditem'])->getValue();
             if($queryfound != NULL)
