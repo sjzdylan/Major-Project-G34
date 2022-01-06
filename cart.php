@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('dbcon.php');
 
 if (isset($_SESSION['email'])) {
 }
@@ -80,48 +81,157 @@ else{
                 font-size: 14px;
                 border-radius: 2px;
             }
+
+                .productimage{
+        height: 96px;
+        width: 96px;
+    }
             
         </style>
 <?php
 include('navbar.php');
+
+if(isset($_GET['id']))
+{
+    $key_child = $_GET['id'];
+
+    $ref_table = "product";
+    $getdata = $database->getReference($ref_table)->getChild($key_child)->getValue();
+
+    if($getdata > 0)
+    {
+        
+         $productname = $getdata['Product Name'];
+         $price = $getdata['Price'];
+         $quantity = $getdata['Quantity'];
+         $image = $getdata['Image'];
+     
+         $updateData = [
+             'Product Name'=>$productname,
+             'Price'=>$price,
+             'Quantity'=>$quantity,
+             'Image'=>$image
+     
+         ];
+     
+         $ref_table = "cart/".$_SESSION['user_id']."/".$key_child;
+         $updatequery_result = $database->getReference($ref_table)->update($updateData);
+     
+    }
+    else
+    {
+        header('location: productmanagement.php');
+        echo "Product does not exist";
+    }
+}
+
+if(isset($_POST['removefromcart']))
+{
+    $key = $_POST['removefromcart'];
+
+    $ref_table = "cart/".$_SESSION['user_id']."/".$key;
+    $deletequery_result = $database->getReference($ref_table)->remove();
+
+}
+   
+
+$ref_table1 = "cart/".$_SESSION['user_id'];
+$fetchdata = $database->getReference($ref_table1)->getValue();
+
+?>
+
+   <br>
+    <div style="width: 1170px; margin: auto;">
+    <h1 class="w3-container w3-xlarge">CART</h1>
+    <?php
+    if($fetchdata > 0)
+{
+    ?>
+  
+  <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT IITEMS IN THE CART</p>
+
+  <?php
+}
+else
+{
+    ?>
+
+    <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT IITEMS IN THE CART</p>
+
+    <?php
+}
+?>
+    <table>
+
+<tr>
+    <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 12px; text-align:center;">IMAGE</p>
+    </td>
+    <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 12px; text-align:left;">PRODUCT</p>
+    </td>
+    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 12px; text-align:left;">QUANTITY</p>
+    </td>
+    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 12px; text-align:left;">SUBTOTAL</p>
+    </td>
+    <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 12px; text-align:left;">REMOVE</p>
+    </td>
+    
+</tr>
+</table>
+<?php
+if($fetchdata > 0)
+{
+    
+    $i=1;
+    foreach($fetchdata as $key => $row)
+    {
+        ?>
+
+<table>
+    <tr>
+        <td style="width: 117px; border-bottom: 1px solid #F0F0F0; text-align:center;">
+        <img class="productimage" src="<?=$row['Image'];?>"><img>
+        </td>
+        
+        <td style="width: 451spx; border-bottom: 1px solid #F0F0F0;">
+        <?=$row['Product Name'];?>
+        </td>
+
+        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+        <?=$row['Quantity'];?>
+        </td>
+
+        <td style="width: 234px; border-bottom: 1px solid #F0F0F0; text-align: left;">
+        <?=$row['Price'];?>
+        </td>
+        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        <form action="cart.php" method="post">
+            <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart">Remove</button>
+        </form>
+        </td>
+    </tr>
+
+    </table>
+
+        <?php
+    }
+}
+else
+{
+    ?>
+   
+    <?php
+}
 ?>
 
   
  
-    <br>
-    <div style="width: 1170px; margin: auto;">
-    <h1 class="w3-container w3-xlarge">CART</h1>
-    <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT NO ITEMS IN THE CART</p>
-    <table>
-    <tr>
-        <td style="width: 10%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">IMAGE</p>
-        </td>
-        <td style="width: 60%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">PRODUCT</p>
-        </td>
-        <td style="width: 20%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">QUANTITY</p>
-        </td>
-        <td style="width: 10%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">SUBTOTAL</p>
-        </td>
-    </tr>
-    <tr>
-        <td style="width: 10%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">INSERT IMAGE HERE</p>
-        </td>
-        <td style="width: 60%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">PRODUCT DETAILS HERE</p>
-        </td>
-        <td style="width: 20%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">INSERT QUANTITY BUTTON HERE</p>
-        </td>
-        <td style="width: 10%; border-bottom: 1px solid #F0F0F0;">
-            <p style="font-size: 12px; text-align:left;">INSERT PRICE HERE</p>
-        </td>
-    </tr>
-    </table>
+ 
+  
     <br>
     <table style="width:50%;">
         <tr>
