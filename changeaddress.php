@@ -13,7 +13,7 @@ if(isset($_POST['changeaddress']))
         'address'=>$newaddress,
     ];
     
-    $database->getReference('userinfo')->getChild($_SESSION['user_id'])->update($postData);
+    $postRef_result = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->update($postData);
 
     if($postRef_result)
     {

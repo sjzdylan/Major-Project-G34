@@ -13,6 +13,7 @@ error_reporting(0);
 
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
 $_SESSION["address"] = $fetchdata['address'];
+$_SESSION["carddetails"] = substr_replace($fetchdata['carddetails'], str_repeat("X", 8), 4, 8);
 
 ?>
 <!DOCTYPE html>
@@ -126,7 +127,7 @@ error_reporting(0);
     if($_SESSION['carddetails'] != '')
     {
         ?> <p style="font-size: 12px;"><?php echo $_SESSION['carddetails']; ?></p> 
-        
+        <p style="font-size: 12px;"><a href="paymentmethod.php" class="w3-hover-opacity">Update Payment Method</a></p>
         <?php
     }
     else{

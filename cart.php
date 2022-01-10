@@ -271,7 +271,29 @@ else
             </td>
         </tr>
     </table>
-    185 x 40 px buttons x2 checkoput and update cart.
+    <?php 
+    error_reporting(0);
+
+    $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
+
+    if($_SESSION['carddetails'] != "")
+    {
+
+    ?>
+    <form action="checkout.php" method="post">
+            <button class="loginbutton" type="submit" value="<?=$key;?>" name="Checkout">Checkout</button>
+    </form>
+    <?php
+    
+    }
+    else{
+        ?> 
+            <p style="font-size: 12px;">You do not have a payment methood associated with the account</p>
+            <p style="font-size: 12px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
+        
+        <?php
+    }
+    ?>
     </div>
     <br>
     <br>
