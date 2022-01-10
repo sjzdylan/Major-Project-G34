@@ -233,44 +233,6 @@ else
  
   
     <br>
-    <table style="width:50%;">
-        <tr>
-            <td>
-                <p>CART TOTALS</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:30%; border-bottom: 1px solid #F0F0F0;">
-                <p style="font-size: 12px; color: #9b9b9b;">SUBTOTAL</p>
-            </td>
-            <td style="width:20%; border-bottom: 1px solid #F0F0F0;">
-                <p style="font-size: 12px; text-align:right;">$66.20</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:30%;">
-                <p style="font-size: 12px; color: #9b9b9b;">SHIPPING</p>
-            </td>
-            <td style="width:20%;">
-                <p style="font-size: 12px; text-align:right;">SELF COLLECTION []</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:30%; border-bottom: 1px solid #F0F0F0;">
-            </td>
-            <td style="width:20%; border-bottom: 1px solid #F0F0F0;">
-                <p style="font-size: 12px; text-align:right;">DELIVERY []</p>
-            </td>
-        </tr>
-        <tr>
-            <td style="width:30%;">
-                <p style="font-size: 12px; color: #9b9b9b;">TOTAL</p>
-            </td>
-            <td style="width:20%;">
-                <p style="font-size: 12px; text-align:right;">$66.20</p>
-            </td>
-        </tr>
-    </table>
     <?php 
     error_reporting(0);
 
@@ -281,7 +243,7 @@ else
     ?>
     <br>
     <form action="checkout.php" method="post">
-    <a href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
+    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
     </form>
     <?php
         }

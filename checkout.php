@@ -33,7 +33,9 @@ if(isset($_GET['id']) && isset($_SESSION['user_id']))
      
          $ref_table = "orderhistory/".$_SESSION['user_id']."/".$key_child;
          $updatequery_result = $database->getReference($ref_table)->update($updateData);
-     
+         
+         $database->getReference("cart/".$_SESSION["user_id"])->remove();
+
          header('location: profile.php');
          
     }

@@ -80,7 +80,7 @@ include("navbar.php");
                         <div style="text-align: center;">
                         <form action="cart.php" method="post">
 
-                        <a href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Add to Cart </a>
+                        <a style="text-decoration: none;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Add to Cart </a>
                         </form>
                         </div>
                         </div>
