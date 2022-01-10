@@ -13,7 +13,12 @@ error_reporting(0);
 
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
 $_SESSION["address"] = $fetchdata['address'];
-$_SESSION["carddetails"] = substr_replace($fetchdata['carddetails'], str_repeat("X", 8), 4, 8);
+$_SESSION["carddetails"] = $fetchdata['carddetails'];
+
+if($_SESSION["carddetails"] != "")
+{
+    $_SESSION["carddetails2"] = substr_replace($fetchdata['carddetails'], str_repeat("X", 8), 4, 8);
+}
 
 ?>
 <!DOCTYPE html>
@@ -95,10 +100,12 @@ $_SESSION["carddetails"] = substr_replace($fetchdata['carddetails'], str_repeat(
 include('navbar.php');
 error_reporting(0);
 ?> 
+
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">MY ACCOUNT</h1>
     <p style="color: #9b9b9b;">EDIT ACCOUNT DETAILS</p>
+
     <?php 
     if(isset($_SESSION['status']))
     {
@@ -161,6 +168,10 @@ error_reporting(0);
     <p style="font-size: 12px;">ORDER HISTORY</p> 
     </div>
     <?php
+
+$retrieveorders = $database->getReference('orderhistory')->getChild($_SESSION['user_id'])->getValue();
+$_SESSION['orderhistory'] = $retrieveorders;
+
     if($_SESSION['orderhistory'] != '')
     {
         ?> 

@@ -16,6 +16,10 @@ if(isset($_POST['carddetails']) && isset($_POST['securitycode']) && isset($_POST
     $securitycode = $_POST['securitycode'];
     $expirydate = $_POST['expirydate'];
 
+   // $hashedcardnumber = password_hash($carddetails, PASSWORD_DEFAULT);
+   // $hashedsecuritycode = password_hash($securitycode, PASSWORD_DEFAULT);
+   // $hashedexpirydate = password_hash($expirydate, PASSWORD_DEFAULT);
+
     $postData = [
         'carddetails'=>$carddetails,
         'securitycode'=>$securitycode,
@@ -78,7 +82,7 @@ if(isset($_POST['carddetails']) && isset($_POST['securitycode']) && isset($_POST
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">PAYMENT</h1>
-    <p style="color: #9b9b9b;">HOW YOUR ORDER WILL BE BILLED</p>
+    <p style="color: #9b9b9b;">BILLING METHOD FOR ORDERS</p>
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 12px;">CURRENT BILLING INFORMATION</p> 

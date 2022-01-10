@@ -274,16 +274,17 @@ else
     <?php 
     error_reporting(0);
 
-    $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
-
     if($_SESSION['carddetails'] != "")
     {
 
+        if($fetchdata > 0){
     ?>
+    <br>
     <form action="checkout.php" method="post">
-            <button class="loginbutton" type="submit" value="<?=$key;?>" name="Checkout">Checkout</button>
+    <a href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
     </form>
     <?php
+        }
     
     }
     else{
