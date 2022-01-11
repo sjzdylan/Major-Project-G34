@@ -92,7 +92,7 @@ include('navbar.php');
             $lower = strtolower($itemsearched);
             $upper = ucfirst($lower);
             $_SESSION['querieditem'] = $upper;
-            $queryfound = $database->getReference('product')->orderbyChild('Product_Name')->equalTo($_SESSION['querieditem'])->getValue();
+            $queryfound = $database->getReference('product')->orderbyChild('Product_Name')->startAt($_SESSION['querieditem'])->endAt($_SESSION['querieditem']."uf8ff")->getValue();
             if($queryfound != NULL)
             {
                 foreach($queryfound as $key => $row)
