@@ -30,26 +30,25 @@
                 padding: 14px 16px;
                 text-decoration: none;
 
-
             }
 
             li a:hover {
-                background-color: #F0F0F0;
+                background-color: #FFE200;
             }
 
             .navbaredit {
                 display: block;
-                color: #9b9b9b;
+                color: #000000;
                 text-align: center;
                 padding: 8px 12px;
                 text-decoration: none;
-                font-size: 12px;
+                font-size: 20px;
 
 
             }
 
             .navbaredit:hover {
-                color: black;
+                background-color: #FFE200;
             }
 
         </style>
@@ -92,8 +91,8 @@
                 <header class="w3-container w3-xlarge">
                     <p class="w3-left"><a href="index.php" style="text-decoration: none;">MPG34SECUREGROCERIES</a></p>
                     <p class="w3-right">
-                    <a href="search.php" class="fa fa-search" style="text-decoration: none;"></a>
-                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"></a>
+                    <a href="search.php" class="fa fa-search" style="text-decoration: none;">SEARCH</a>
+                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;">CART</a>
                     </p>
                 </header>
             </div>
@@ -105,7 +104,7 @@
             <div style="width: 1170px; margin:auto;">
 
                 <ul>
-                    <li><a href="index.php">STORE</a></li>
+                    <li><a href="index.php" style="font-size: 20px;">STORE</a></li>
                     <?php
                          if(isset($_SESSION['verified_admin']))
                          {
