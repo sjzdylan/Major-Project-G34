@@ -48,7 +48,7 @@ include("navbar.php");
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
 }
 </style>
@@ -70,7 +70,7 @@ include("navbar.php");
                     ?>      
                     
                         <div class="card1 w3-col l3 s6">
-                        <tr style="font-size: 12px">
+                        <tr style="font-size: 20px">
                         <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
                         <div class="container1">
                             <td><p style="text-align:center;"><?=$row['Product_Name'];?></p></td>

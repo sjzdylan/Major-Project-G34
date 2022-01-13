@@ -43,7 +43,7 @@
                 text-align: center;
                 padding: 8px 12px;
                 text-decoration: none;
-                font-size: 12px;
+                font-size: 20px;
 
 
             }
