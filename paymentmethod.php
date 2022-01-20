@@ -28,8 +28,11 @@ if (isset($_GET['id']) && $_GET['id'] == $_SESSION['token'])  //check if token v
 
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
 
+if($fetchdata['carddetails']){
+
 $_SESSION["carddetails"] = substr_replace($fetchdata['carddetails'], str_repeat("X", 8), 4, 8);
 
+}
 if(isset($_POST['carddetails']) && isset($_POST['securitycode']) && isset($_POST['expirydate']))
 {
     $carddetails = strip_tags($_POST['carddetails']);
