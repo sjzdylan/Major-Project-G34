@@ -30,9 +30,12 @@ if(isset($_GET['id']) && isset($_SESSION['user_id']))
              'Image'=>$image
      
          ];
-     
-         $ref_table = "orderhistory/".$_SESSION['user_id']."/".$key_child;
-         $updatequery_result = $database->getReference($ref_table)->update($updateData);
+         
+         $ref_table = "orderhistory/".$_SESSION['user_id']."/";
+
+         $cartdata = $database->getReference("cart/".$_SESSION["user_id"])->getValue();
+
+         $updatequery_result = $database->getReference($ref_table)->update($cartdata);
          
          $database->getReference("cart/".$_SESSION["user_id"])->remove();
 
