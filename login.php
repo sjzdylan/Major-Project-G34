@@ -95,7 +95,7 @@ include('navbar.php');
     if(isset($_SESSION['registermsg']))
     {
         ?>
-            <p class="w3-container" style="font-size: 14px; font-weight: bold;"><?php echo $_SESSION['registermsg'];?></p>
+            <p class="w3-container" style="font-size: 14px; font-weight: bold; color: red;"><?php echo $_SESSION['registermsg'];?></p>
         <?php
     }
     else{

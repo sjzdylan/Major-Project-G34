@@ -4,9 +4,9 @@ include('dbcon.php');
 
 if(isset($_POST['register']))
 {
-    $username = $_POST['username'];
-    $emailaddress = $_POST['emailaddress'];
-    $password = $_POST['password'];
+    $username = strip_tags($_POST['username']);
+    $emailaddress = strip_tags($_POST['emailaddress']);
+    $password = strip_tags($_POST['password']);
 
     $userProperties = [
         'displayName'=>$username,

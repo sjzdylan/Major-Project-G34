@@ -17,7 +17,7 @@ $_SESSION["carddetails"] = $fetchdata['carddetails'];
 
 if($_SESSION["carddetails"] != "")
 {
-    $_SESSION["carddetails2"] = substr_replace($fetchdata['carddetails'], str_repeat("X", 8), 4, 8);
+    $_SESSION["carddetails"] = substr_replace($fetchdata['carddetails'], str_repeat("X", 8), 4, 8);
 }
 
 ?>
@@ -110,7 +110,7 @@ error_reporting(0);
     if(isset($_SESSION['status']))
     {
         ?>
-            <p class="message" style="font-size: 14px; font-weight: bold;"><?php echo $_SESSION['status'];?></p>
+            <p class="message" style="font-size: 14px; font-weight: bold; color: red;"><?php echo $_SESSION['status'];?></p>
         <?php
     }
     else

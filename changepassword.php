@@ -6,15 +6,15 @@ include('dbcon.php');
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
 
 $dbpassword = $fetchdata['password'];
-$oldpassword = $_POST['oldpassword'];
+$oldpassword = strip_tags($_POST['oldpassword']);
 
 $verify = password_verify($oldpassword, $dbpassword);
 
 if(isset($_POST['changepassword']))
 {
     
-    $newpassword = $_POST['newpassword'];
-    $confirmnewpassword = $_POST['confirmnewpassword'];
+    $newpassword = strip_tags($_POST['newpassword']);
+    $confirmnewpassword = strip_tags($_POST['confirmnewpassword']);
 
     $uid = $_SESSION['user_id'];
     

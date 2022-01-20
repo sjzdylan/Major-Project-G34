@@ -27,10 +27,10 @@ if(isset($_POST['deleteproduct']))
 if(isset($_POST['updateproduct']))
 {
     $key = $_POST['key'];
-    $productname = $_POST['productname'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-    $image = $_POST['image'];
+    $productname = strip_tags($_POST['productname']);
+    $price = strip_tags($_POST['price']);
+    $quantity = strip_tags($_POST['quantity']);
+    $image = strip_tags($_POST['image']);
 
     $updateData = [
         'Product_Name'=>$productname,
@@ -59,10 +59,10 @@ if(isset($_POST['updateproduct']))
 if(isset($_POST['addproduct']))
 {
     echo $_POST['productname'];
-    $productname = $_POST['productname'];
-    $price = $_POST['price'];
-    $quantity = $_POST['quantity'];
-    $image = $_POST['image'];
+    $productname = strip_tags($_POST['productname']);
+    $price = strip_tags($_POST['price']);
+    $quantity = strip_tags($_POST['quantity']);
+    $image = strip_tags($_POST['image']);
 
     $postData = [
         'Product_Name'=>$productname,

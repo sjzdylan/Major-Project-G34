@@ -26,8 +26,8 @@ if(isset($_POST['deleteuser']))
 
 if(isset($_POST['updateuser']))
 {
-    $displayname = $_POST['username'];
-    $email = $_POST['email'];
+    $displayname = strip_tags($_POST['username']);
+    $email = strip_tags($_POST['email']);
    
 
     $uid = $_POST['user_id'];

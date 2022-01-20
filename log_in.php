@@ -5,8 +5,8 @@ use Firebase\Auth\Token\Exception\InvalidToken;
 
 if(isset($_POST['log_in']))
 {
-    $email = $_POST['emailaddress'];
-    $clearTextPassword = $_POST['password'];
+    $email = strip_tags($_POST['emailaddress']);
+    $clearTextPassword = strip_tags($_POST['password']);
 
     try {
         $user = $auth->getUserByEmail($email);

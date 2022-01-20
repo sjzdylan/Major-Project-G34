@@ -4,7 +4,7 @@ include('dbcon.php');
 
 if(isset($_POST['changeaddress']))
 {
-    $newaddress = $_POST['newaddress'];
+    $newaddress = strip_tags($_POST['newaddress']);
     $uid = $_SESSION['user_id'];
 
    
