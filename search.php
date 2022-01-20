@@ -41,6 +41,18 @@ include('navbar.php');
                 padding: 2px 16px;
                 
             }
+            .searchbutton {
+                background-color: black;
+                color: white;
+                border: none;
+                cursor: pointer;
+                padding: 4px 10px;
+                font-size: 14px;
+                border-radius: 2px;
+                height: 45px;
+                
+            }
+
             .loginbutton {
                 background-color: black;
                 color: white;
@@ -49,6 +61,7 @@ include('navbar.php');
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
+                
             }
 
             .box{
@@ -70,13 +83,40 @@ include('navbar.php');
         </style>
 
     <br>
-    <h1> Enter the product name that you are searching for </h1>
+    <div class="w3-container" style="width: 1170px; margin: auto;">
+    <h1 class="w3-xlarge">SEARCH</h1>
+    <p style="color: #9b9b9b;">ENTER THE PRODUCT NAME THAT YOU ARE SEARCHING FOR</p>
     <br>
     <div class="box">
         <form action ="searched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="Search.." />
-            <input class="submitbutton" type="submit" name="searched" value="Search!" />
+            <input class="submitbutton loginbutton" type="submit" name="searched" value="Search!" />
         </form>
     </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     </body>
 </html>
+<?php
+    include('footer.php');
+?>
