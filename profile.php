@@ -9,6 +9,10 @@ else{
     header("location: login.php");
 }
 
+$token = hash("sha256",uniqid(rand(), TRUE));
+$_SESSION['token'] = $token;
+$_SESSION['token_time'] = time();
+
 error_reporting(0);
 
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
@@ -94,6 +98,12 @@ if($_SESSION["carddetails"] != "")
                 border-radius: 2px;
             }
 
+            .deletebutton{
+                border: none;
+                background-color: inherit;
+                text-decoration: underline;
+                cursor: pointer;
+            }
         </style>
 
 <?php
@@ -133,14 +143,15 @@ error_reporting(0);
     <?php
     if($_SESSION['carddetails'] != '')
     {
-        ?> <p style="font-size: 12px;"><?php echo $_SESSION['carddetails']; ?></p> 
-        <p style="font-size: 12px;"><a href="paymentmethod.php" class="w3-hover-opacity">Update Payment Method</a></p>
+        ?> 
+        <p style="font-size: 12px;"><?php echo $_SESSION['carddetails']; ?></p> 
+        <p style="font-size: 12px;"><a href="paymentmethod.php?id=<?=$token; ?>" class="w3-hover-opacity">Update Payment Method</a></p>
         <?php
     }
     else{
-        ?> <p style="font-size: 12px;">You do not have a payment methood associated with the account</p>
-            <p style="font-size: 12px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
-        
+        ?> 
+        <p style="font-size: 12px;">You do not have a payment methood associated with the account</p>
+        <p style="font-size: 12px;"><a href="paymentmethod.php?id=<?=$token; ?>" class="w3-hover-opacity">Add Payment Method</a></p>
         <?php
     }
     ?>

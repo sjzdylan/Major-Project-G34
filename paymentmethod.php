@@ -6,6 +6,26 @@ include('navbar.php');
 
 include('dbcon.php');
 
+session_regenerate_id();
+
+if (!isset($_SESSION['token']))
+{
+    $_SESSION['token'] = hash("sha256",uniqid(rand(), TRUE));
+}
+
+if (isset($_GET['id']) && $_GET['id'] == $_SESSION['token'])  //check if token valid
+{
+	$token_age = time() - $_SESSION['token_time'];   //calculate token age
+	if ($token_age <= 300)  // limit validity of the token age to 5 minutes
+	{
+        
+    }
+    else{
+        $_SESSION['status'] = "You have been away for too long!";
+		header("location:profile.php");
+	  }
+}
+
 $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
 
 $_SESSION["carddetails"] = substr_replace($fetchdata['carddetails'], str_repeat("X", 8), 4, 8);
@@ -97,6 +117,7 @@ else{
     <?php
     if(isset($_SESSION['billingmsg']))
     { 
+        echo $token;
         ?>
     <p style="font-size: 14px; color: red; font-weight: bold;"><?php echo $_SESSION['billingmsg']; ?></p>
     <?php
