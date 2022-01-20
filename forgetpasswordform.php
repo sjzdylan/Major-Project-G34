@@ -42,7 +42,6 @@ include('navbar.php');
 <br>
 <form action="forgetpassword.php" method="post">
 <input class="loginfields" type="text" name="resetemail" placeholder="Email *" required>
-<i class="fa fa-eye" id="togglePassword3" style="margin-left: -30px; cursor: pointer;"></i>
 <br>
 <br>
 <input class="loginbutton" name="forgetpassword" type="submit" value="Save changes">
