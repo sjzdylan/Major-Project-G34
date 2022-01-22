@@ -90,7 +90,7 @@ include('navbar.php');
     <div class="box">
         <form action ="searched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="Search.." />
-            <input class="submitbutton loginbutton" type="submit" name="searched" value="Search!" />
+            <input class="submitbutton searchbutton" type="submit" name="searched" value="Search!" />
         </form>
     </div>
     </div>
