@@ -35,10 +35,19 @@ $_SESSION["carddetails"] = substr_replace($fetchdata['carddetails'], str_repeat(
 }
 if(isset($_POST['carddetails']) && isset($_POST['securitycode']) && isset($_POST['expirydate']))
 {
+    $ciphering = "AES-128-CTR";
+    $iv_length = openssl_cipher_iv_length($ciphering);
+    $options = 0;
+    $encryption_iv = '1234567891011121';
+    $encryption_key = 'MPG34';
+
     $carddetails = strip_tags($_POST['carddetails']);
     $securitycode = strip_tags($_POST['securitycode']);
     $expirydate = strip_tags($_POST['expirydate']);
 
+    $encryptedcarddetails = openssl_encrypt($carddetails, $ciphering, $encryption_key, $options, $encryption_iv);
+    $encryptedsecuritycode = openssl_encrypt($securitycode, $ciphering, $encryption_key, $options, $encryption_iv);
+    $encryptedexpirydate = openssl_encrypt($expirydate, $ciphering, $encryption_key, $options, $encryption_iv);
    // $hashedcardnumber = password_hash($carddetails, PASSWORD_DEFAULT);
    // $hashedsecuritycode = password_hash($securitycode, PASSWORD_DEFAULT);
    // $hashedexpirydate = password_hash($expirydate, PASSWORD_DEFAULT);
@@ -47,12 +56,14 @@ if(isset($_POST['carddetails']) && isset($_POST['securitycode']) && isset($_POST
     $securityregex = preg_match("/^[0-9]{3}$/", $securitycode);
     $expiryregex = preg_match("/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/", $expirydate);
 
+
+
     if(($mastercard || $visacard) && $securityregex && $expiryregex)
     {
     $postData = [
-        'carddetails'=>$carddetails,
-        'securitycode'=>$securitycode,
-        'expirydate'=>$expirydate
+        'carddetails'=>$encryptedcarddetails,
+        'securitycode'=>$encryptedsecuritycode,
+        'expirydate'=>$encryptedexpirydate
     ];
     
     $postRef_result = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->update($postData);
