@@ -251,9 +251,25 @@ else
     }
     else{
         ?> 
-            <p style="font-size: 12px;">You do not have a payment methood associated with the account</p>
+            <p style="font-size: 12px;">You do not have a payment method associated with the account</p>
             <p style="font-size: 12px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
-        
+            <?php
+            if($_SESSION['address'] != ""){
+            
+            ?>    
+            <p style="font-size: 12px;">OR</p>
+            <p style="font-size: 12px;">Pay cash on delivery</p>
+            <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
+            <?php
+            }
+            else{
+                ?>
+            <p style="font-size: 12px;">You do not have an address associated with the account</p>
+            <p style="font-size: 12px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
+        <?php   
+        }
+           
+        ?>
         <?php
     }
     ?>
