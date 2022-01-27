@@ -9,29 +9,36 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+<style>
+.textsize {
+
+  font-size: 20px;
+
+}
+</style>
     <body>
 
     <div style="width: 1170px; margin: auto;">
-        <footer class="w3-padding-64 w3-white w3-small w3-center" id="footer" style="border-top: 1px solid #F0F0F0; border-bottom: 1px solid #F0F0F0;">
+        <footer class="w3-padding-64 w3-small w3-center" id="footer">
             <div class="w3-row-padding">
 
               <div class="w3-col s3 w3-justify" style='margin-left:10%; margin-right:10%;'>
-                <h4>PAYMENT</h4>
-                <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+                <p class="textsize">PAYMENT</p>
+                <p><i class="fa fa-fw fa-credit-card textsize"></i> Credit Card</p>
                 <img src="images\paymentimg.png">
                
               </div>
         
-              <div class="w3-col s3 w3-justify">
-                <h4>MPG34SECUREGROCERIES</h4>
+              <div class="w3-col s3 w3-justify textsize">
+                <p  class="textsize">MPG34SECUREGROCERIES</p>
                 <p><a href="aboutus.php" class="w3-hover-opacity">About Us</a></p>
                 <p><a href="#" class="w3-hover-opacity">Shopping Guide</a></p>
                 <p><a href="#" class="w3-hover-opacity">FAQs</a></p>
                 <p><a href="#" class="w3-hover-opacity">Informatics</a></p>
               </div>
         
-              <div class="w3-col s3 w3-justify">
-                <h4>ACCOUNT</h4>
+              <div class="w3-col s3 w3-justify textsize">
+                <p  class="textsize">ACCOUNT</p>
                 <p><a href="login.php" class="w3-hover-opacity">My Account</a></p>
                 <p><a href="cart.php" class="w3-hover-opacity">View Cart</a></p>
                 <?php
@@ -59,7 +66,7 @@
         </footer>
         </div>
         <div style="width: 1170px; margin: auto;">
-          <p>MPG34SECUREGROCERIES</p>
+          <p  class="textsize">MPG34SECUREGROCERIES</p>
         </div>
     </body>
 </html>
