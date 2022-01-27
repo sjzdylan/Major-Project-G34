@@ -52,9 +52,9 @@ else{
                 display: block;
                 color: #9b9b9b;
                 text-align: center;
-                padding: 8px 12px;
+                padding: 8px 20px;
                 text-decoration: none;
-                font-size: 12px;
+                font-size: 20px;
 
 
             }
@@ -78,7 +78,7 @@ else{
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
             }
 
@@ -165,19 +165,19 @@ else
 
 <tr>
     <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 12px; text-align:center;">IMAGE</p>
+        <p style="font-size: 20px; text-align:center;">IMAGE</p>
     </td>
     <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 12px; text-align:left;">PRODUCT</p>
+        <p style="font-size: 20px; text-align:left;">PRODUCT</p>
     </td>
     <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 12px; text-align:left;">QUANTITY</p>
+        <p style="font-size: 20px; text-align:left;">QUANTITY</p>
     </td>
     <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 12px; text-align:left;">SUBTOTAL</p>
+        <p style="font-size: 20px; text-align:left;">SUBTOTAL</p>
     </td>
     <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 12px; text-align:left;">REMOVE</p>
+    <p style="font-size: 20px; text-align:left;">REMOVE</p>
     </td>
     
 </tr>
@@ -198,17 +198,17 @@ if($fetchdata > 0)
         </td>
         
         <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
-        <p><?=$row['Product_Name'];?></p>
+        <p style="font-size: 20px; text-align:left;"><?=$row['Product_Name'];?> </p>
         </td>
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <?=$row['Quantity'];?>
+        <p style="font-size: 20px; text-align:left;"><?=$row['Quantity'];?> </p>
         </td>
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <?=$row['Price'];?>
+        <p style="font-size: 20px; text-align:left;"><?=$row['Price'];?> </p>
         </td>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 117px; border-bottom: 1px solid #F0F0F0; ">
         <form action="cart.php" method="post">
             <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart">Remove</button>
         </form>
@@ -251,21 +251,21 @@ else
     }
     else{
         ?> 
-            <p style="font-size: 12px;">You do not have a payment method associated with the account</p>
-            <p style="font-size: 12px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
+            <p style="font-size: 20px;">You do not have a payment method associated with the account</p>
+            <p style="font-size: 20px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
             <?php
             if($_SESSION['address'] != ""){
             
             ?>    
-            <p style="font-size: 12px;">OR</p>
-            <p style="font-size: 12px;">Pay cash on delivery</p>
+            <p style="font-size: 20px;">OR</p>
+            <p style="font-size: 20px;">Pay cash on delivery</p>
             <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
             <?php
             }
             else{
                 ?>
-            <p style="font-size: 12px;">You do not have an address associated with the account</p>
-            <p style="font-size: 12px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
+            <p style="font-size: 20px;">You do not have an address associated with the account</p>
+            <p style="font-size: 20px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
         <?php   
         }
            
