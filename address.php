@@ -19,7 +19,7 @@ $_SESSION["address"] = $fetchdata['address'];
                 border: 1px solid #F0F0F0;
                 width: 493px;
                 height: 34px;
-                font-size: 14px;
+                font-size: 20px;
                 padding-left: 10px;
                 color: #9b9b9b;
             }
@@ -30,7 +30,7 @@ $_SESSION["address"] = $fetchdata['address'];
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
             }
 </style>
@@ -39,15 +39,15 @@ $_SESSION["address"] = $fetchdata['address'];
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">ADDRESS</h1>
-    <p style="color: #9b9b9b;">YOUR ADDRESS IS WHERE YOUR ORDER WILL BE DELIVERED TO</p>
+    <p style="color: #9b9b9b; font-size: 20px;">YOUR ADDRESS IS WHERE YOUR ORDER WILL BE DELIVERED TO</p>
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 12px;">CURRENT ADDRESS</p> 
+    <p style="font-size: 20px;">CURRENT ADDRESS</p> 
     </div>
-    <p style="font-size: 12px;"><?php echo $_SESSION['address']; ?></p>
+    <p style="font-size: 20px;"><?php echo $_SESSION['address']; ?></p>
     <br>
     <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 12px;">UPDATE ADDRESS</p>
+    <p style="font-size: 20px;">UPDATE ADDRESS</p>
     </div>
     <form action="changeaddress.php" method="post">
     <br>

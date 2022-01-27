@@ -14,7 +14,7 @@ include("navbar.php");
                 border: 1px solid #F0F0F0;
                 width: 493px;
                 height: 34px;
-                font-size: 14px;
+                font-size: 20px;
                 padding-left: 10px;
                 color: #9b9b9b;
             }
@@ -25,7 +25,7 @@ include("navbar.php");
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
             }
 </style>
@@ -33,7 +33,7 @@ include("navbar.php");
 <br>
     <div style="width: 1170px; margin: auto;">
     <h1 class="w3-container w3-xlarge">USER MANAGEMENT</h1>
-    <p class="w3-container" style="color: #9b9b9b">EDIT INFORMATION OF EXISTING USERS</p>
+    <p class="w3-container" style="color: #9b9b9b; font-size: 20px;">EDIT INFORMATION OF EXISTING USERS</p>
 
     <form action="updateuser.php" method="post">
 
@@ -46,12 +46,12 @@ include("navbar.php");
             $user = $auth->getUser($uid);
             ?>  
                 <input type="hidden" name="user_id" value="<?=$user->uid;?>">
-                <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-                <p style="font-size: 12px;">USERNAME</p> 
+                <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+                <p style="font-size: 20px;">USERNAME</p> 
                 <input class="loginfields" name="username" type="text" value="<?=$user->displayName;?>"><br>
                 <br>
-                <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-                <p style="font-size: 12px;">EMAIL</p> 
+                <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+                <p style="font-size: 20px;">EMAIL</p> 
                 <input class="loginfields" name="email" type="text" value="<?=$user->email;?>"><br>
                 <br>
                 <input class="loginbutton" name="updateuser" type="submit" value="Save changes">

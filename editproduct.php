@@ -12,7 +12,7 @@ include("navbar.php");
                 border: 1px solid #F0F0F0;
                 width: 493px;
                 height: 34px;
-                font-size: 14px;
+                font-size: 20px;
                 padding-left: 10px;
                 color: #9b9b9b;
             }
@@ -23,7 +23,7 @@ include("navbar.php");
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
             }
             
@@ -32,7 +32,7 @@ include("navbar.php");
     <br>
     <div style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge w3-container">PRODUCT MANAGEMENT</h1>
-    <p class="w3-container" style="color: #9b9b9b">EDIT INFORMATION OF EXISTING PRODUCTS</p>
+    <p class="w3-container" style="color: #9b9b9b; font-size: 20px;">EDIT INFORMATION OF EXISTING PRODUCTS</p>
     </div>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h4>PRODUCT</h4>

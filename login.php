@@ -66,7 +66,7 @@ else{
                 border: 1px solid #F0F0F0;
                 width: 493px;
                 height: 34px;
-                font-size: 14px;
+                font-size: 20px;
                 padding-left: 10px;
                 color: #9b9b9b;
             }
@@ -77,7 +77,7 @@ else{
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
             }
             
@@ -90,12 +90,12 @@ include('navbar.php');
     <br>
     <div style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge w3-container">MY ACCOUNT</h1>
-    <p class="w3-container" style="color: #9b9b9b">ACCOUNT LOGIN/REGISTER</p>
+    <p class="w3-container" style="color: #9b9b9b; font-size: 20px;">ACCOUNT LOGIN/REGISTER</p>
     <?php 
     if(isset($_SESSION['registermsg']))
     {
         ?>
-            <p class="w3-container" style="font-size: 14px; font-weight: bold; color: red;"><?php echo $_SESSION['registermsg'];?></p>
+            <p class="w3-container" style="font-size: 20px; font-weight: bold; color: red;"><?php echo $_SESSION['registermsg'];?></p>
         <?php
     }
     else{
@@ -108,7 +108,7 @@ include('navbar.php');
     </div>
  
     <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h4>LOGIN</h4>
+    <p style="font-size: 20px;">LOGIN</p>
     <form action="log_in.php" method="post">
         <input class="loginfields" type="email" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
         <br>
@@ -119,9 +119,9 @@ include('navbar.php');
 		<input class="loginbutton" name="log_in"type="submit" value="Log in">
     </form>
     <br>
-    <a href="forgetpasswordform.php" class="w3-hover-opacity">Lost your password?</a>
+    <a href="forgetpasswordform.php" class="w3-hover-opacity" style="font-size: 20px;">Lost your password?</a>
     <br><br>
-    <h4>REGISTER</h4>
+    <p style="font-size: 20px;">REGISTER</p>
     <form action="register.php" method="post">
     
         <input class="loginfields" type="text" name="username" id="username" placeholder="Username *" required><br>

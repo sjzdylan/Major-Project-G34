@@ -97,7 +97,7 @@ else{
                 border: 1px solid #F0F0F0;
                 width: 493px;
                 height: 34px;
-                font-size: 14px;
+                font-size: 20px;
                 padding-left: 10px;
                 color: #9b9b9b;
             }
@@ -114,9 +114,9 @@ else{
     
     .creditcard {
         border: 1px solid #F0F0F0;
-        width: 150px;
+        width: 200px;
         height: 34px;
-        font-size: 14px;
+        font-size: 20px;
         padding-left: 10px;
         color: #9b9b9b;
     }
@@ -127,7 +127,7 @@ else{
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">PAYMENT</h1>
-    <p style="color: #9b9b9b;">BILLING METHOD FOR ORDERS</p>
+    <p style="color: #9b9b9b; font-size: 20px;">BILLING METHOD FOR ORDERS</p>
     <?php
     if(isset($_SESSION['billingmsg']))
     { 
@@ -143,13 +143,13 @@ else{
     <?php
     }    
     ?>
-    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 12px;">CURRENT BILLING INFORMATION</p> 
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 20px;">CURRENT BILLING INFORMATION</p> 
     </div>
-    <p style="font-size: 12px;"><?php echo $_SESSION['carddetails']; ?></p>
+    <p style="font-size: 20px;"><?php echo $_SESSION['carddetails']; ?></p>
     <br>
-    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 12px;">UPDATE BILLING INFORMATION</p>
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 20px;">UPDATE BILLING INFORMATION</p>
     </div>
     <form action="paymentmethod.php" method="post">
     <br>
