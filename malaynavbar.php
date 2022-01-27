@@ -15,8 +15,9 @@
             ul {
                 list-style-type: none;
                 margin: 0;
-                padding: 0;
                 overflow: hidden;
+                background-color: #FDDBAC;
+                width: 100%;
             }
 
             li {
@@ -29,17 +30,17 @@
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
-
+                background-color: #FDDBAC;
 
             }
 
             li a:hover {
-                background-color: #F0F0F0;
+                background-color: #FFFFFF;
             }
 
             .navbaredit {
                 display: block;
-                color: #9b9b9b;
+                color: #000000;
                 text-align: center;
                 padding: 8px 12px;
                 text-decoration: none;
@@ -49,17 +50,25 @@
             }
 
             .navbaredit:hover {
-                color: black;
+                background-color: #FFFFFF;
             }
 
         </style>
 
+    <div style="background-color: #EBA442; padding-left: 50px; fontsize: 80px; border-bottom-style: solid; text-align:center; letter-spacing: 9px;">
+        <b><a style=" font-size: 40px;">MPG34SECUREGROCERIES</a></b>
+        </div>
 
-        <div style="width: 100%; background-color:#F0F0F0">
-            <div style="width: 1170px; margin:auto; background-color:#F0F0F0">
+
+        <div style="width: 100%; background-color:#FDDBAC">
+        
+            <div style="width: 100%; margin:auto; background-color:#FDDBAC; border-bottom-style: solid; padding-right:40px;">
+            
 
                 <ul>
-                    <a class="w3-right navbaredit" href="login.php">AKAUN SAYA</a>
+                    
+                    <a class="w3-right navbaredit" href="login.php">AKAUN SAYA
+</a>
                     <?php
                 if(isset($_SESSION['user_id']))
                 {
@@ -73,15 +82,16 @@
                     
                 }
                 ?>
-                <a class="w3-left navbaredit" href="indexchi.php">CINA</a>
                 <a class="w3-left navbaredit" href="index.php">INGGERIS</a>
-                <a class="w3-left navbaredit" href="login.php">TAMIL</a>
+                <a class="w3-left navbaredit" href="indexchi.php">CINA</a>
+                <a class="w3-left navbaredit" href="indexmalay.php">MELAYU</a>
+                <a class="w3-left navbaredit" href="indextamil.php">TAMIL</a>
+                <a data-fancybox="gallery" class="w3-left navbaredit" href="images/4.png">BAGAIMANA NAK GUNA</a>
+            
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" rel="stylesheet" />
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.js"></script>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css">
-                <a data-fancybox="gallery" class="w3-left navbaredit" href="images/4.png">
-BAGAIMANA NAK GUNA</a>
                 </ul>
 
             </div>
@@ -90,12 +100,14 @@ BAGAIMANA NAK GUNA</a>
         </div>
 
         <div style="width: 100%;">
-            <div style="width: 1170px; margin:auto;">
+            <div style="width:100%; margin:auto; float:right; font-size: 20px; border-bottom-style: solid; background-color: #FDDBAC;">
+            
                 <header class="w3-container w3-xlarge">
-                    <p class="w3-left"><a href="index.php" style="text-decoration: none;">MPG34SECUREGROCERIES</a></p>
                     <p class="w3-right">
-                    <a href="search.php" class="fa fa-search" style="text-decoration: none;"></a>
-                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"></a>
+                        
+                    <a href="search.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> CARIAN </a>
+                    <a style="padding-right:40px;"> </a>
+                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> KERETA </a>
                     </p>
                 </header>
             </div>
@@ -104,15 +116,14 @@ BAGAIMANA NAK GUNA</a>
         </div>
 
         <div style="width: 100%; border-top: 1px solid #F0F0F0; border-bottom: 1px solid #F0F0F0;">
-            <div style="width: 1170px; margin:auto;">
+            <div style="margin:auto;">
 
                 <ul>
-                    <li><a href="index.php">KEDAI</a></li>
                     <?php
                          if(isset($_SESSION['verified_admin']))
                          {
                              ?>
-                                    <li><a href="productmanagement.php">PRODUK</a></li>
+                                    <li><a href="productmanagement.php">CARIAN</a></li>
                                     <li><a href="usermanagement.php">PENGGUNA</a></li>
                              <?php
                          }

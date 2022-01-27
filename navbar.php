@@ -12,9 +12,6 @@
     <body>
         
         <style>
-            body{
-    background-color: #FFBF66;
-}
             ul {
                 list-style-type: none;
                 margin: 0;
@@ -85,8 +82,8 @@
                 ?>
                 <a class="w3-left navbaredit" href="index.php">ENGLISH</a>
                 <a class="w3-left navbaredit" href="indexchi.php">CHINESE</a>
-                <a class="w3-left navbaredit" href="login.php">MALAY</a>
-                <a class="w3-left navbaredit" href="login.php">TAMIL</a>
+                <a class="w3-left navbaredit" href="indexmalay.php">MALAY</a>
+                <a class="w3-left navbaredit" href="indextamil.php">TAMIL</a>
                 <a data-fancybox="gallery" class="w3-left navbaredit" href="images/1.png">HOW TO USE</a>
             
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" rel="stylesheet" />

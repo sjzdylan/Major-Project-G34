@@ -301,7 +301,7 @@ function showSlides(n) {
 
 
 <?php
-include('newfooter.php');
+include('footer.php');
 ?>
 
 </body>
