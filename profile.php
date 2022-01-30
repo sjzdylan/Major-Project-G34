@@ -92,7 +92,7 @@ if($_SESSION["carddetails"] != "")
                 border: 1px solid #F0F0F0;
                 width: 493px;
                 height: 34px;
-                font-size: 20px;
+                font-size: 14px;
                 padding-left: 10px;
                 color: #9b9b9b;
             }
@@ -103,7 +103,7 @@ if($_SESSION["carddetails"] != "")
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 20px;
+                font-size: 14px;
                 border-radius: 2px;
             }
 
@@ -112,11 +112,6 @@ if($_SESSION["carddetails"] != "")
                 background-color: inherit;
                 text-decoration: underline;
                 cursor: pointer;
-            }
-            .textsize {
-
-                font-size: 20px;
-
             }
         </style>
 
@@ -128,13 +123,13 @@ error_reporting(0);
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">MY ACCOUNT</h1>
-    <p style="color: #9b9b9b; font-size: 20px;">EDIT ACCOUNT DETAILS</p>
+    <p style="color: #9b9b9b;">EDIT ACCOUNT DETAILS</p>
 
     <?php 
     if(isset($_SESSION['status']))
     {
         ?>
-            <p class="message" style="font-size: 20px; font-weight: bold; color: red;"><?php echo $_SESSION['status'];?></p>
+            <p class="message" style="font-size: 14px; font-weight: bold; color: red;"><?php echo $_SESSION['status'];?></p>
         <?php
     }
     else
@@ -146,51 +141,51 @@ error_reporting(0);
     
     ?>
 
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px;">USERNAME</p> 
+    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 12px;">USERNAME</p> 
     </div>
-    <p style="font-size: 20px;"> <?php echo $_SESSION['email']; ?></p>
+    <p style="font-size: 12px;"> <?php echo $_SESSION['email']; ?></p>
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 20px;">BILLING INFORMATION</p> 
+    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 12px;">BILLING INFORMATION</p> 
     </div>
     <?php
     if($_SESSION['carddetails'] != '')
     {
         ?> 
-        <p style="font-size: 20px;"><?php echo $_SESSION['carddetails']; ?></p> 
-        <p style="font-size: 20px;"><a href="paymentmethod.php?id=<?=$token; ?>" class="w3-hover-opacity">Update Payment Method</a></p>
+        <p style="font-size: 12px;"><?php echo $_SESSION['carddetails']; ?></p> 
+        <p style="font-size: 12px;"><a href="paymentmethod.php?id=<?=$token; ?>" class="w3-hover-opacity">Update Payment Method</a></p>
         <?php
     }
     else{
         ?> 
-        <p style="font-size: 20px;">You do not have a payment methood associated with the account</p>
-        <p style="font-size: 20px;"><a href="paymentmethod.php?id=<?=$token; ?>" class="w3-hover-opacity">Add Payment Method</a></p>
+        <p style="font-size: 12px;">You do not have a payment methood associated with the account</p>
+        <p style="font-size: 12px;"><a href="paymentmethod.php?id=<?=$token; ?>" class="w3-hover-opacity">Add Payment Method</a></p>
         <?php
     }
     ?>
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 20px;">ADDRESS</p> 
+    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 12px;">ADDRESS</p> 
     </div>
     <?php
     if($_SESSION['address'] != '')
     {
-        ?> <p style="font-size: 20px;"><?php echo $_SESSION['address']; ?></p> 
-            <p style="font-size: 20px;"><a href="address.php" class="w3-hover-opacity">Update Address</a></p>
+        ?> <p style="font-size: 12px;"><?php echo $_SESSION['address']; ?></p> 
+            <p style="font-size: 12px;"><a href="address.php" class="w3-hover-opacity">Update Address</a></p>
 
         <?php
     }
     else{
-        ?> <p style="font-size: 20px;">You do not have an address associated with the account</p>
-            <p style="font-size: 20px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
+        ?> <p style="font-size: 12px;">You do not have an address associated with the account</p>
+            <p style="font-size: 12px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
         
         <?php
     }
     ?>
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 20px;">ORDER HISTORY</p> 
+    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 12px;">ORDER HISTORY</p> 
     </div>
     <?php
 
@@ -200,21 +195,42 @@ $_SESSION['orderhistory'] = $retrieveorders;
     if($_SESSION['orderhistory'] != '')
     {
         ?> 
-            <p style="font-size: 20px;"><a href="orderhistory.php" class="w3-hover-opacity">View Order History</a></p>
+            <p style="font-size: 12px;"><a href="orderhistory.php" class="w3-hover-opacity">View Order History</a></p>
 
         <?php
     }
     else{
         ?> 
-            <p style="font-size: 20px;">You have not made any purchases on your account before</p>
+            <p style="font-size: 12px;">You have not made any purchases on your account before</p>
         
         <?php
     }
     ?>
     
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 20px;">PASSWORD CHANGE</p> 
+    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 12px;">TWO-FACTOR AUTHENTICATION </p> 
+    </div>
+    <?php
+    $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
+    if($fetchdata['2fasecret'] != '')
+    {
+        ?> 
+        <p style="font-size: 12px;">You have enabled two-factor authentication!</p>
+
+        <?php
+    }
+    else{
+        ?> 
+        <p style="font-size: 12px;">You do not have two-factor authentication enabled on your account!</p>
+        <p style="font-size: 12px;"><a href="2fastatus.php" class="w3-hover-opacity">Enable two-factor authentication</a></p>
+        
+        <?php
+    }
+    ?>
+    <br>
+    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 12px;">PASSWORD CHANGE</p> 
     </div>
     <br>
     <form action="changepassword.php" method="post">

@@ -45,7 +45,7 @@ if(isset($_POST['log_in']))
 
                 $_SESSION['email'] = $email;
                 
-                header('location: index.php');
+                header('location: 2faloginstatus.php');
                
 
             } catch (InvalidToken $e) {
