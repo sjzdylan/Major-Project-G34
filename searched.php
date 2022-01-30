@@ -26,16 +26,20 @@ include('navbar.php');
 
             .productimage{
                 height: 300px;
-                width: 292.5px;
+                width: 289.8px;
             }
 
             .card1{
                 transition: 0.5s;
-                height: 500px;
+                height: 600px;
                 width: 292.5px;
+                border: 1px;
+                border-color: #FFBF66;
+                border-style: solid;
+                background-color: #FFFFFF;
             }
             .card1:hover{
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                box-shadow: 0 8px 16px 0 #FFBF66;
             }
             .container1{
                 padding: 2px 16px;
@@ -59,9 +63,13 @@ include('navbar.php');
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
-                
+            }
+
+            .loginbutton{
+                background-color: #FFBF66;
+                color: #000000;
             }
 
             .box{
@@ -79,13 +87,17 @@ include('navbar.php');
             .box input[type=text]{
                 border: 1px solid #ccc;
             }
+
+            body{
+            background-color: #FFBF66;
+            }
             
         </style>
 
     <br>
-    <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h1 class="w3-xlarge">SEARCH</h1>
-    <p style="color: #9b9b9b;">LIST OF PRODUCTS THAT YOU MIGHT BE LOOKING FOR</p>
+    <div class="w3-container w3-DarkOrange" style="width: 1170px; margin: auto;">
+    <h1 style="font-size: 40px; font-weight: bold;">SEARCH</h1>
+    <p style="font-size: 20px;">ENTER THE PRODUCT NAME THAT YOU ARE SEARCHING FOR</p>
     <br>
     <div class="box">
         <form action ="searched.php" method="get">
@@ -112,13 +124,14 @@ include('navbar.php');
             {
                 foreach($queryfound as $key => $row)
                 {
-    ?>      
+    ?>          
+                <div style="width: 1170px; margin: auto;">
                 <div class="card1 w3-col l3 s6">
-                <tr style="font-size: 12px">
+                <tr style="font-size: 20px">
                 <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
                 <div class="container1">
-                    <td><p style="text-align:center;"><?=$row['Product_Name'];?></p></td>
-                <td><p style="text-align:center;"><?=$row['Price'];?></p></td>
+                    <td><p style="text-align:center; font-size: 30px;"><?=$row['Product_Name'];?></p></td>
+                <td><p style="text-align:center; font-size: 20px;"><?=$row['Price'];?></p></td>
                 </div>
                 <br><br>
                 <div style="text-align: center;">

@@ -26,16 +26,20 @@ include('navbar.php');
 
             .productimage{
                 height: 300px;
-                width: 292.5px;
+                width: 289.8px;
             }
 
             .card1{
                 transition: 0.5s;
-                height: 500px;
+                height: 600px;
                 width: 292.5px;
+                border: 1px;
+                border-color: #FFBF66;
+                border-style: solid;
+                background-color: #FFFFFF;
             }
             .card1:hover{
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                box-shadow: 0 8px 16px 0 #FFBF66;
             }
             .container1{
                 padding: 2px 16px;
@@ -80,12 +84,15 @@ include('navbar.php');
                 border: 1px solid #ccc;
             }
             
+            body{
+            background-color: #FFBF66;
+            }
         </style>
 
     <br>
-    <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h1 class="w3-xlarge">SEARCH</h1>
-    <p style="color: #9b9b9b;">ENTER THE PRODUCT NAME THAT YOU ARE SEARCHING FOR</p>
+    <div class="w3-container w3-DarkOrange" style="width: 1170px; margin: auto;">
+    <h1 style="font-size: 40px; font-weight: bold;">SEARCH</h1>
+    <p style="font-size: 20px;">ENTER THE PRODUCT NAME THAT YOU ARE SEARCHING FOR</p>
     <br>
     <div class="box">
         <form action ="searched.php" method="get">
