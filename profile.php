@@ -211,7 +211,7 @@ $_SESSION['orderhistory'] = $retrieveorders;
         <?php
     }
     ?>
-    
+    <br>
     <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 20px;">TWO-FACTOR AUTHENTICATION </p> 
     </div>
