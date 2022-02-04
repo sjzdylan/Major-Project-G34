@@ -42,6 +42,11 @@ if (!$checkResult) {
         body{
             background-color: #FFBF66;
         }
+        
+        #p1{
+            text-decoration: underline;
+            font-weight: bold;
+        }
 
     </style>
 </head>
@@ -53,7 +58,8 @@ if (!$checkResult) {
                     <div style="text-align: center;">
                            <h1>Authentication Successful</h1>
                            <p>You have successfully enabled two-factor authentication on your account.</p>
-                           <p><a href="index.php" class="w3-hover-opacity">Click here to go back to the home page!</a></p>
+                           <br>
+                           <p id="p1"><a href="index.php" class="w3-hover-opacity">Click here to go back to the home page!</a></p>
                     </div>
                 <hr>    
             </div>
