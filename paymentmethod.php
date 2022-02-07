@@ -7,6 +7,8 @@ include('navbar.php');
 
 include('dbcon.php');
 
+session_regenerate_id();
+
 if (!isset($_SESSION['token']))
 {
     $_SESSION['token'] = hash("sha256",uniqid(rand(), TRUE));
@@ -15,7 +17,7 @@ if (!isset($_SESSION['token']))
 if (isset($_GET['id']) && $_GET['id'] == $_SESSION['token'])  //check if token valid
 {
 	$token_age = time() - $_SESSION['token_time'];   //calculate token age
-	if ($token_age <= 5)  // limit validity of the token age to 5 minutes
+	if ($token_age <= 300)  // limit validity of the token age to 5 minutes
 	{
         
     }

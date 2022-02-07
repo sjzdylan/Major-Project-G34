@@ -25,7 +25,7 @@ $iv_length = openssl_cipher_iv_length($ciphering);
 $options = 0;
 $decryption_iv = '1234567891011121';
 $decryption_key = 'MPG34';
-// issue with decrypting
+
 $_SESSION["carddetails"] = openssl_decrypt($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
 
 if($_SESSION["carddetails"] != "")
