@@ -56,7 +56,7 @@
         </style>
 
     <div style="background-color: #EBA442; padding-left: 50px; fontsize: 80px; border-bottom-style: solid; text-align:center; letter-spacing: 9px;">
-        <b><a style=" font-size: 40px;">MPG34SECUREGROCERIES</a></b>
+        <b><a style=" font-size: 40px;" href="http://localhost/Major-Project-G34-main/indexmalay.php">MPG34SECUREGROCERIES</a></b>
         </div>
 
 
