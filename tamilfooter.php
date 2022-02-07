@@ -26,14 +26,14 @@
               </div>
         
               <div class="w3-col s3 w3-justify textsize">
-                <p  class="textsize">MPG34SECUREGROCERIES</p>
+                <p  class="textsize" >MPG34SECUREGROCERIES</p>
                 <p><a href="aboutus.php" class="w3-hover-opacity">எங்களை பற்றி</a></p>
                 
             </div>
         </footer>
         </div>
         <div style="width: 1170px; margin: auto;">
-          <p  class="textsize">MPG34SECUREGROCERIES</p>
+          <p  class="textsize" style="margin-left: 32px;">MPG34SECUREGROCERIES</p>
         </div>
     </body>
 </html>

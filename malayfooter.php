@@ -33,7 +33,7 @@
         </footer>
         </div>
         <div style="width: 1170px; margin: auto;">
-          <p  class="textsize">MPG34SECUREGROCERIES</p>
+          <p  class="textsize" style="margin-left: 32px;">MPG34SECUREGROCERIES</p>
         </div>
     </body>
 </html>
