@@ -118,6 +118,10 @@ if($_SESSION["carddetails"] != "")
                 font-size: 20px;
 
             }
+
+            body{
+                background-color: #FFBF66;
+            }
         </style>
 
 <?php
@@ -216,18 +220,20 @@ $_SESSION['orderhistory'] = $retrieveorders;
     <p style="font-size: 20px;">TWO-FACTOR AUTHENTICATION </p> 
     </div>
     <?php
-    $fetchdata = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
-    if($fetchdata['2fasecret'] != '')
+    $fetch2fastatus = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
+    $_SESSION['2fasecret'] = $fetch2fastatus;
+    if($_SESSION['2fasecret'] != '')
     {
         ?> 
         <p style="font-size: 20px;">You have enabled two-factor authentication!</p>
+        <p style="font-size: 20px;"><a href="2fastatus.php" class="w3-hover-opacity">Update Two-Factor Authentication Status</a></p>
 
         <?php
     }
     else{
         ?> 
         <p style="font-size: 20px;">You do not have two-factor authentication enabled on your account!</p>
-        <p style="font-size: 20px;"><a href="2fastatus.php" class="w3-hover-opacity">Enable two-factor authentication</a></p>
+        <p style="font-size: 20px;"><a href="2fastatus.php" class="w3-hover-opacity">Enable Two-Factor Authentication</a></p>
 
         <?php
     }

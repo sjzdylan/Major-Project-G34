@@ -42,55 +42,78 @@ $_SESSION["2fasecret"] = $fetchdata['2fasecret'];
                 font-size: 14px;
                 padding-left: 10px;
                 color: #9b9b9b;
-            }
+    }
             
-            .loginbutton {
-                background-color: black;
-                color: white;
-                border: none;
-                cursor: pointer;
-                padding: 4px 10px;
-                font-size: 14px;
-                border-radius: 2px;
-            }
+    .loginbutton {
+        background-color: black;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 4px 10px;
+        font-size: 14px;
+        border-radius: 2px;
+    }
+
+    body{
+        background-color: #FFBF66;
+    }
+
 </style>
 <body>
 
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">TWO-FACTOR AUTHENTICATION</h1>
-    <p style="color: #9b9b9b;">ENABLE TWO-FACTOR AUTHENTICATION TO SECURE YOUR ACCOUNT</p>
+    <p>ENABLE TWO-FACTOR AUTHENTICATION TO SECURE YOUR ACCOUNT</p>
     <br>
-    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 12px;">CURRENT STATUS</p> 
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <p style="font-size: 20px;">CURRENT STATUS</p> 
     </div>
     <?php
     if($_SESSION['2fasecret'] != '')
     {
         ?> 
-        <p style="font-size: 12px;">Two-Factor Authentication is enabled! </p>
+        <p style="font-size: 20px;">Two-Factor Authentication is enabled! </p>
+        <br>
+        <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 20px;">DISABLE TWO-FACTOR AUTHENTICATION</p>
+        </div>
+        <script>
+            function confirmDisable(){
+                if(confirm("Are you sure you want to disable 2FA on your account?\n\nThis may give malicious users an easier access to your account.") == true){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+        </script>
+        <form method="POST" action="2fadisable.php" onsubmit="return confirmDisable()">
+        <br>
+        <button class="loginbutton" name="disable2fa" type="submit">Deactivate 2FA!</button>
+        </form>
 
         <?php
     }
     else{
         ?> 
         <p style="font-size: 12px;">Two-Factor Authentication is currently not enabled!</p>
-        
+        <br>
+        <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 12px;">ENABLE TWO-FACTOR AUTHENTICATION</p>
+        </div>
+        <form action="2faenable.php" method="post">
+        <br>
+        <input class="loginbutton" name="enable2fa" type="submit" value="Activate 2FA!">
+ 
+        </form>
+        </div>
+        <br>
+        <br>
+
         <?php
     }
     ?>
-    <br>
-    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-    <p style="font-size: 12px;">ENABLE TWO-FACTOR AUTHENTICATION</p>
-    </div>
-    <form action="2faenable.php" method="post">
-    <br>
-    <input class="loginbutton" name="enable2fa" type="submit" value="Activate 2FA!">
- 
-    </form>
-    </div>
-    <br>
-    <br>
 
 </div>
 
