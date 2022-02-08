@@ -5,7 +5,8 @@ include('dbcon.php');
 
 if(isset($_POST['disable2fa'])) {
     
-    $disable2fa = $database->getReference("userinfo/".$_SESSION["user_id"]."/".$_SESSION["2fasecret"])->remove();
+
+    $disable2fa = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getChild('2fasecret')->remove();
     
     if($disable2fa){
         echo "Two-Factor Authentication has been disabled";
