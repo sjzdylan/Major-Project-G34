@@ -32,10 +32,11 @@ include("navbar.php");
     <br>
     <div style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge w3-container">PRODUCT MANAGEMENT</h1>
-    <p class="w3-container" style="color: #9b9b9b; font-size: 20px;">EDIT INFORMATION OF EXISTING PRODUCTS</p>
+    <p class="w3-container" style="color: black; font-size: 20px;">EDIT INFORMATION OF EXISTING PRODUCTS</p>
     </div>
     <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h4>PRODUCT</h4>
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
+    <p style="font-size: 20px;">PRODUCT</p> 
     <?php
         if(isset($_GET['id']))
         {

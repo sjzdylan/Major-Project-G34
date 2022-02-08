@@ -39,14 +39,14 @@ $_SESSION["address"] = $fetchdata['address'];
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">ADDRESS</h1>
-    <p style="color: #9b9b9b; font-size: 20px;">YOUR ADDRESS IS WHERE YOUR ORDER WILL BE DELIVERED TO</p>
+    <p style="color: black; font-size: 20px;">YOUR ADDRESS IS WHERE YOUR ORDER WILL BE DELIVERED TO</p>
     <br>
-    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">CURRENT ADDRESS</p> 
     </div>
     <p style="font-size: 20px;"><?php echo $_SESSION['address']; ?></p>
     <br>
-    <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">UPDATE ADDRESS</p>
     </div>
     <form action="changeaddress.php" method="post">

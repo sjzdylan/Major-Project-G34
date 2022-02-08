@@ -25,28 +25,28 @@ include("navbar.php");
 <br>
     <div style="width: 1170px; margin: auto;">
     <h1 class="w3-container w3-xlarge">PRODUCT</h1>
-    <p class="w3-container" style="color: #9b9b9b; font-size: 20px;">ADD/EDIT INFORMATION OF EXISTING PRODUCTS</p>
+    <p class="w3-container" style="color: black; font-size: 20px;">ADD/EDIT INFORMATION OF EXISTING PRODUCTS</p>
     <table>
     <tr>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 117px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">NO.</p>
         </td>
-        <td style="width: 175.5px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 175.5px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">IMAGE</p>
         </td>
-        <td style="width: 334px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 334px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">PRODUCT</p>
         </td>
-        <td style="width: 146.25px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 146.25px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">QUANTITY</p>
         </td>
-        <td style="width: 146.25px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 146.25px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">PRICE</p>
         </td>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 117px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">EDIT</p>
         </td>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 117px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">DELETE</p>
         </td>
     </tr>

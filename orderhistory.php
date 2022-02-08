@@ -39,20 +39,20 @@ $_SESSION["address"] = $fetchdata['address'];
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">ORDER HISTORY</h1>
-    <p style="color: #9b9b9b; font-size: 20px;">YOUR RECENT PURCHASES CAN BE SEEN HERE</p>
+    <p style="color: black; font-size: 20px;">YOUR RECENT PURCHASES CAN BE SEEN HERE</p>
     <br>
     <table>
     <tr>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 117px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">NO.</p>
         </td>
-        <td style="width: 668px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 668px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">PRODUCT</p>
         </td>
-        <td style="width: 192.5px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 192.5px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">QUANTITY</p>
         </td>
-        <td style="width: 192.5px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 192.5px; border-bottom: 1px solid black;">
             <p style="font-size: 20px; text-align:left;">PRICE</p>
         </td>
     </tr>
