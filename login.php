@@ -90,7 +90,7 @@ include('navbar.php');
     <br>
     <div style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge w3-container">MY ACCOUNT</h1>
-    <p class="w3-container" style="color: #9b9b9b; font-size: 20px;">ACCOUNT LOGIN/REGISTER</p>
+    <p class="w3-container" style="color: black; font-size: 20px;">ACCOUNT LOGIN/REGISTER</p>
     <?php 
     if(isset($_SESSION['registermsg']))
     {
@@ -108,12 +108,13 @@ include('navbar.php');
     </div>
  
     <div class="w3-container" style="width: 1170px; margin: auto;">
+    <div style="float: left;">
     <p style="font-size: 20px;">LOGIN</p>
     <form action="log_in.php" method="post">
         <input class="loginfields" type="email" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
         <br>
         <input class="loginfields" type="password" name="password" id="password1" placeholder="Password *" required>
-        <i class="fa fa-eye" id="togglePassword1" style="margin-left: -30px; cursor: pointer;"></i>
+        <i class="fa fa-eye" id="togglePassword1" style="position: absolute; margin-top: 8px; margin-left: -30px; cursor: pointer;"></i>
         <br>
         <br>
 		<input class="loginbutton" name="log_in"type="submit" value="Log in">
@@ -121,6 +122,8 @@ include('navbar.php');
     <br>
     <a href="forgetpasswordform.php" class="w3-hover-opacity" style="font-size: 20px;">Lost your password?</a>
     <br><br>
+    </div>
+    <div style="float: right;">
     <p style="font-size: 20px;">REGISTER</p>
     <form action="register.php" method="post">
     
@@ -129,11 +132,12 @@ include('navbar.php');
         <input class="loginfields" type="email" name="emailaddress" id="emailaddress" placeholder="Email address *" required><br>
         <br>
         <input class="loginfields" type="password" name="password" id="password2" placeholder="Password *" minlength="6" required>
-        <i class="fa fa-eye" id="togglePassword2" style="margin-left: -30px; cursor: pointer;"></i>
+        <i class="fa fa-eye" id="togglePassword2" style="position: absolute; margin-top: 8px; margin-left: -30px; cursor: pointer;"></i>
         <br>
         <br>
 		<input class="loginbutton" name="register" type="submit" value="Register">
     </form>
+    </div>
     </div>
     <br>
     <br>

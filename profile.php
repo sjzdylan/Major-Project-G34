@@ -128,7 +128,7 @@ error_reporting(0);
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <h1 class="w3-xlarge">MY ACCOUNT</h1>
-    <p style="color: #9b9b9b; font-size: 20px;">EDIT ACCOUNT DETAILS</p>
+    <p style="color: black; font-size: 20px;">EDIT ACCOUNT DETAILS</p>
 
     <?php 
     if(isset($_SESSION['status']))
@@ -146,12 +146,12 @@ error_reporting(0);
     
     ?>
 
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
         <p style="font-size: 20px;">USERNAME</p> 
     </div>
     <p style="font-size: 20px;"> <?php echo $_SESSION['email']; ?></p>
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">BILLING INFORMATION</p> 
     </div>
     <?php
@@ -170,7 +170,7 @@ error_reporting(0);
     }
     ?>
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">ADDRESS</p> 
     </div>
     <?php
@@ -189,7 +189,7 @@ error_reporting(0);
     }
     ?>
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">ORDER HISTORY</p> 
     </div>
     <?php
@@ -212,7 +212,7 @@ $_SESSION['orderhistory'] = $retrieveorders;
     }
     ?>
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">TWO-FACTOR AUTHENTICATION </p> 
     </div>
     <?php
@@ -234,7 +234,7 @@ $_SESSION['orderhistory'] = $retrieveorders;
     ?>
 
     <br>
-    <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+    <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">PASSWORD CHANGE</p> 
     </div>
     <br>
