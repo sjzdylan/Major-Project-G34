@@ -97,10 +97,10 @@ $_SESSION["2fasecret"] = $fetchdata['2fasecret'];
     }
     else{
         ?> 
-        <p style="font-size: 12px;">Two-Factor Authentication is currently not enabled!</p>
+        <p style="font-size: 20px;">Two-Factor Authentication is currently not enabled!</p>
         <br>
-        <div style="height: 20px; width: 493px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 12px;">ENABLE TWO-FACTOR AUTHENTICATION</p>
+        <div style="height: 30px; width: 493px; border-bottom: 1px solid #F0F0F0;">
+        <p style="font-size: 20px;">ENABLE TWO-FACTOR AUTHENTICATION</p>
         </div>
         <form action="2faenable.php" method="post">
         <br>
