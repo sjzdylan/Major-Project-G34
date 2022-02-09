@@ -220,7 +220,7 @@ $_SESSION['orderhistory'] = $retrieveorders;
     <p style="font-size: 20px;">TWO-FACTOR AUTHENTICATION </p> 
     </div>
     <?php
-    $fetch2fastatus = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getValue();
+    $fetch2fastatus = $database->getReference('userinfo')->getChild($_SESSION['user_id'])->getChild('2fasecret')->getValue();
     $_SESSION['2fasecret'] = $fetch2fastatus;
     if($_SESSION['2fasecret'] != '')
     {
