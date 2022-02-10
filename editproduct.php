@@ -37,6 +37,8 @@ include("navbar.php");
     <div class="w3-container" style="width: 1170px; margin: auto;">
     <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
     <p style="font-size: 20px;">PRODUCT</p> 
+        </div>
+        <br>
     <?php
         if(isset($_GET['id']))
         {
@@ -72,7 +74,7 @@ include("navbar.php");
             }
         }
     ?>
-   
+   </div>
 </body>
 </html>
 <?php

@@ -12,6 +12,9 @@
     <body>
         
         <style>
+           body{
+                background-color: #FFBF66;
+            }
             ul {
                 list-style-type: none;
                 margin: 0;

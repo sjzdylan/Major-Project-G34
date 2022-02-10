@@ -92,10 +92,10 @@ include("navbar.php");
     </table>
     <br>
     <p style="font-size: 20px;"><a href="addproduct.php" class="w3-hover-opacity">Add new product</a></p>
-
-    </body>
-</html>
-
+    </div>
 <?php
 include('footer.php');
 ?>
+
+    </body>
+</html>

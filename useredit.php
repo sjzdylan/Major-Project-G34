@@ -48,10 +48,14 @@ include("navbar.php");
                 <input type="hidden" name="user_id" value="<?=$user->uid;?>">
                 <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
                 <p style="font-size: 20px;">USERNAME</p> 
+        </div>
+        <br>
                 <input class="loginfields" name="username" type="text" value="<?=$user->displayName;?>"><br>
                 <br>
                 <div style="height: 30px; width: 493px; border-bottom: 1px solid black;">
                 <p style="font-size: 20px;">EMAIL</p> 
+        </div>
+        <br>
                 <input class="loginfields" name="email" type="text" value="<?=$user->email;?>"><br>
                 <br>
                 <input class="loginbutton" name="updateuser" type="submit" value="Save changes">
@@ -70,7 +74,7 @@ include("navbar.php");
     </form>
     </table>
     <br>
-
+</div>
     </body>
 </html>
 
