@@ -56,7 +56,7 @@
         </style>
 
     <div style="background-color: #EBA442; padding-left: 50px; fontsize: 80px; border-bottom-style: solid; text-align:center; letter-spacing: 9px;">
-        <b><a style=" font-size: 40px;" href="http://localhost/Major-Project-G34-main/index.php">MPG34SECUREGROCERIES</a></b>
+        <b><a style=" font-size: 40px;" href="index.php">MPG34SECUREGROCERIES</a></b>
         </div>
 
 
@@ -103,9 +103,9 @@
                 <header class="w3-container w3-xlarge">
                     <p class="w3-right">
                         
-                    <a href="search.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> SEARCH </a>
+                    <a href="search.php" style="text-decoration: none; padding-right:20px;"><i class="fa fa-search"></i> SEARCH </a>
                     <a style="padding-right:40px;"> </a>
-                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> CART </a>
+                    <a href="cart.php" class= "w3-margin-right" style="text-decoration: none; font-family: Arial;"><i class="fa fa-shopping-cart"></i> CART</a>
                     </p>
                 </header>
             </div>
