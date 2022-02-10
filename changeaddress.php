@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('dbcon.php');
+ob_start();
 
 if(isset($_POST['changeaddress']))
 {
