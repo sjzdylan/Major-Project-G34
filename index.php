@@ -21,7 +21,6 @@ include("navbar.php");
 
 <style>
 
-
 body{
     background-color: #FFBF66;
 }
@@ -68,13 +67,46 @@ body{
 .slideshow {
     float: right;
     width: 500px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top:20px;
-    padding-bottom: 20px;
     background-color: #FFBF66;
-    padding-top: 50px;
+    margin-right: 60px;
 }
+
+.slideshow:hover{
+  transform: scale(1.5);
+}
+
+.img-magnifier-container {
+  position:relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 100px;
+  height: 100px;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
 
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
@@ -184,25 +216,25 @@ img {vertical-align: middle;}
 <div class="slideshow">
 <div class="slideshow-container">
 
-<div class="mySlides fade">
+<div class="mySlides fade"  id="myimage">
   <div class="numbertext">1 / 4</div>
   <img src="images/strongpweng.jpg" style="width:100%; border: solid;">
   <div class="text">skidiki</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides fade" id="myimage">
   <div class="numbertext">2 / 4</div>
   <img src="images/phisheng.jpg" style="width:100%; border: solid;">
   <div class="text">Caption Two</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides fade" id="myimage">
   <div class="numbertext">3 / 4</div>
   <img src="images/antieng.jpg" style="width:100%; border: solid;">
   <div class="text">Caption Three</div>
 </div>
 
-<div class="mySlides fade">
+<div class="mySlides fade" id="myimage">
   <div class="numbertext">4 / 4</div>
   <img src="images/updateeng.jpg" style="width:100%; border: solid;">
   <div class="text">Caption Three</div>
@@ -223,32 +255,25 @@ img {vertical-align: middle;}
 
 
 <script>
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 0;
+showSlides();
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
+function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+    slides[i].style.display = "none";  
   }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
   for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
 </script>
 
 </div>
@@ -271,7 +296,7 @@ function showSlides(n) {
                     ?>      
                     
                         <div class="card1 w3-col l3 s6">
-                        <tr style="font-size: 20px">
+                        <tr style="font-size: 20px;">
                         <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
                         <div class="container1">
                             <td><p style="text-align:center; font-size: 25px;"><?=$row['Product_Name'];?></p></td>
