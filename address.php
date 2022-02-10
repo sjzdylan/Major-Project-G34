@@ -33,6 +33,10 @@ $_SESSION["address"] = $fetchdata['address'];
                 font-size: 20px;
                 border-radius: 2px;
             }
+            
+            body{
+                background-color: #FFBF66;
+            }
 </style>
 <body>
 
