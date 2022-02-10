@@ -12,6 +12,12 @@
     <body>
         
         <style>
+
+            body{
+                background: #FFBF66;
+
+
+            }
             ul {
                 list-style-type: none;
                 margin: 0;
@@ -81,16 +87,16 @@ include('navbar.php');
     <br>
     <br>
     <br>
-    <div class="w3-container" style="width: 1170px; margin: auto;">
+    <div class="w3-container" style="width: 1270px; margin: auto;">
     <div style="width: 585px; float:left; overflow:hidden;">
-    <b style="font-size: 12px;">INTRODUCTION</b>
-    <p style="font-size: 12px;">As the digital age starts to become more apparent in the lives of people, there is an increasing trend in usage of devices such as computers and mobile phones. This leads to many elderly to be left out as some may not be able to comprehend or understand how such devices work, while the others do not seem to care at all. Hence, as elderly slowly integrate into the digital age, there are cases where the elderly fall for scams and cyberattacks due to them not having the knowledge of it and how to prevent it. Hence, there is a need to inform and keep them updated on the types of scams and cyberattack that are prevalent so as to prevent them from falling into it.</p>
+    <b style="font-size: 25px;">INTRODUCTION</b>
+    <p style="font-size: 20px;">As the digital age starts to become more apparent in the lives of people, there is an increasing trend in usage of devices such as computers and mobile phones. This leads to many elderly to be left out as some may not be able to comprehend or understand how such devices work, while the others do not seem to care at all. Hence, as elderly slowly integrate into the digital age, there are cases where the elderly fall for scams and cyberattacks due to them not having the knowledge of it and how to prevent it. Hence, there is a need to inform and keep them updated on the types of scams and cyberattack that are prevalent so as to prevent them from falling into it.</p>
     <br>
-    <b style="font-size: 12px;">OBJECTIVES</b>
-    <p style="font-size: 12px;">The objectives meant to be achieved through this project are to develop a secure platform for the elderly to integrate in the cyber world, to ensure that the platform is user friendly for them, and to create awareness of cyber-attacks such as online scams. </p>
+    <b style="font-size: 25px;">OBJECTIVES</b>
+    <p style="font-size: 20px;">The objectives meant to be achieved through this project are to develop a secure platform for the elderly to integrate in the cyber world, to ensure that the platform is user friendly for them, and to create awareness of cyber-attacks such as online scams. </p>
     <br>
-    <b style="font-size: 12px;">SCOPE</b>
-    <p style="font-size: 12px;">The scope of this project is to build a secured and elderly-friendly web application for senior citizens. The project is planned to be completed within the assigned time frame of 10 weeks. This website will allow the elderly to experience seamless yet secured transactions while raising awareness regarding the different types of scams at the same time.</p>
+    <b style="font-size: 25px;">SCOPE</b>
+    <p style="font-size: 20px;">The scope of this project is to build a secured and elderly-friendly web application for senior citizens. The project is planned to be completed within the assigned time frame of 10 weeks. This website will allow the elderly to experience seamless yet secured transactions while raising awareness regarding the different types of scams at the same time.</p>
     <br>
     </div>
 
