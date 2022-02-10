@@ -95,7 +95,7 @@ include('malaynavbar.php');
     <p style="font-size: 20px;">MASUKKAN NAMA PRODUK YANG ANDA CARI</p>
     <br>
     <div class="box">
-        <form action ="searched.php" method="get">
+        <form action ="malaysearched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="MASUKKAN NAMA PRODUK YANG ANDA CARI" />
             <input class="submitbutton searchbutton" type="submit" name="searched" value="CARIAN!" />
         </form>
