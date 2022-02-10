@@ -103,7 +103,7 @@
                 <header class="w3-container w3-xlarge">
                     <p class="w3-right">
                         
-                    <a href="search.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> 搜索 </a>
+                    <a href="chisearch.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> 搜索 </a>
                     <a style="padding-right:40px;"> </a>
                     <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> 购物车 </a>
                     </p>

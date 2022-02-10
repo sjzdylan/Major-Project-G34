@@ -56,7 +56,7 @@
         </style>
 
     <div style="background-color: #EBA442; padding-left: 50px; fontsize: 80px; border-bottom-style: solid; text-align:center; letter-spacing: 9px;">
-        <b><a style=" font-size: 40px;">MPG34SECUREGROCERIES</a></b>
+        <b><a style=" font-size: 40px;" href="http://localhost/Major-Project-G34-main/indextamil.php">MPG34SECUREGROCERIES</a></b>
         </div>
 
 
@@ -82,8 +82,8 @@
                 ?>
                 <a class="w3-left navbaredit" href="index.php">ஆங்கிலம்</a>
                 <a class="w3-left navbaredit" href="indexchi.php">சீனம்</a>
-                <a class="w3-left navbaredit" href="login.php">மலாய்</a>
-                <a class="w3-left navbaredit" href="login.php">தமிழ்</a>
+                <a class="w3-left navbaredit" href="indexmalay.php">மலாய்</a>
+                <a class="w3-left navbaredit" href="indextamil.php">தமிழ்</a>
                 <a data-fancybox="gallery" class="w3-left navbaredit" href="images/2.png">எப்படி உபயோகிப்பது
 </a>
             
@@ -104,7 +104,7 @@
                 <header class="w3-container w3-xlarge">
                     <p class="w3-right">
                         
-                    <a href="search.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> தேடு </a>
+                    <a href="tamsearch.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> தேடு </a>
                     <a style="padding-right:40px;"> </a>
                     <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> வண்டி </a>
                     </p>
