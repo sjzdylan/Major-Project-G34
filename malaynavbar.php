@@ -107,7 +107,7 @@
                         
                     <a href="malaysearch.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> CARIAN </a>
                     <a style="padding-right:40px;"> </a>
-                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> KERETA </a>
+                    <a href="malaycart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> KERETA </a>
                     </p>
                 </header>
             </div>

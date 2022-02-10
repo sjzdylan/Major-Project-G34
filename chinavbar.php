@@ -105,7 +105,7 @@
                         
                     <a href="chisearch.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> 搜索 </a>
                     <a style="padding-right:40px;"> </a>
-                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> 购物车 </a>
+                    <a href="chicart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> 购物车 </a>
                     </p>
                 </header>
             </div>

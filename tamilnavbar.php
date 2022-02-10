@@ -106,7 +106,7 @@
                         
                     <a href="tamsearch.php" class="fa fa-search" style="text-decoration: none; padding-right:20px;"> தேடு </a>
                     <a style="padding-right:40px;"> </a>
-                    <a href="cart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> வண்டி </a>
+                    <a href="tamilcart.php" class="fa fa-shopping-cart w3-margin-right" style="text-decoration: none;"> வண்டி </a>
                     </p>
                 </header>
             </div>
