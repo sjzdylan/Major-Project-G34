@@ -95,16 +95,16 @@ else{
 <html>
 <style>
     
-    .loginfields {
-                border: 1px solid #F0F0F0;
+ 	.loginfields {
+ 		border: 1px solid #F0F0F0;
                 width: 493px;
                 height: 34px;
                 font-size: 20px;
                 padding-left: 10px;
                 color: #9b9b9b;
-            }
+    	}
             
-            .loginbutton {
+	.loginbutton {
                 background-color: black;
                 color: white;
                 border: none;
@@ -112,17 +112,20 @@ else{
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
-            }
+     	}
     
-    .creditcard {
-        border: 1px solid #F0F0F0;
-        width: 200px;
-        height: 34px;
-        font-size: 20px;
-        padding-left: 10px;
-        color: #9b9b9b;
-    }
+   	.creditcard {
+        	border: 1px solid #F0F0F0;
+        	width: 200px;
+        	height: 34px;
+        	font-size: 20px;
+        	padding-left: 10px;
+        	color: #9b9b9b;
+    	}
 
+	body{
+        	background-color: #FFBF66;
+    	}
 </style>
 <body>
 
