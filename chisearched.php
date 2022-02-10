@@ -2,7 +2,7 @@
 session_start();
 
 include("dbcon.php");
-include('navbar.php');
+include('chinavbar.php');
    
 ?>
 
@@ -88,13 +88,13 @@ body{
 
     <br>
     <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h1 style="font-size:30px;">SEARCH</h1>
-    <p style="color: #000000; font-size: 20px;">LIST OF PRODUCTS THAT YOU MIGHT BE LOOKING FOR</p>
+    <h1 style="font-size:30px;">搜索</h1>
+    <p style="color: #000000; font-size: 20px;">您可能正在寻找的产品</p>
     <br>
     <div class="box">
-        <form action ="searched.php" method="get">
-            <input class="searchfield" type="text" id="Search" name="Search" placeholder="Search.." />
-            <input class="submitbutton loginbutton" type="submit" name="searched" value="Search!" />
+        <form action ="chisearched.php" method="get">
+            <input class="searchfield" type="text" id="Search" name="Search" placeholder="您可能正在寻找的产品" />
+            <input class="submitbutton loginbutton" type="submit" name="searched" value="搜索!" />
         </form>
     </div>
 
@@ -128,7 +128,7 @@ body{
                 <div style="text-align: center;">
                 <form action="cart.php" method="post">
 
-                <a style="text-decoration: none; font-size: 20px;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Add to Cart </a>
+                <a style="text-decoration: none; font-size: 20px;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">加入购物车</a>
                 </form>
                 </div>
                 </div>
@@ -150,5 +150,5 @@ body{
     <br>
 </html>
 <?php
-    include('footer.php');
+    include('footerchi.php');
 ?>

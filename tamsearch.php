@@ -95,7 +95,7 @@ include('tamilnavbar.php');
     <p style="font-size: 20px;">நீங்கள் தேடும் தயாரிப்பு பெயரை உள்ளிடவும்</p>
     <br>
     <div class="box">
-        <form action ="searched.php" method="get">
+        <form action ="tamsearched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="நீங்கள் தேடும் தயாரிப்பு பெயரை உள்ளிடவும்" />
             <input class="submitbutton searchbutton" type="submit" name="searched" value="தேடு!" />
         </form>

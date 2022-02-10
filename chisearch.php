@@ -95,7 +95,7 @@ include('chinavbar.php');
     <p style="font-size: 20px;">输入您要寻找的产品</p>
     <br>
     <div class="box">
-        <form action ="searched.php" method="get">
+        <form action ="chisearched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="输入您要寻找的产品" />
             <input class="submitbutton searchbutton" type="submit" name="searched" value="搜索！" />
         </form>
