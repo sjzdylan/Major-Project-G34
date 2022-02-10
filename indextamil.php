@@ -262,14 +262,13 @@ function showSlides(n) {
                         <tr style="font-size: 20px">
                         <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
                         <div class="container1">
-                            <td><p style="text-align:center; font-size: 30px;"><?=$row['Product_Name'];?></p></td>
+                            <td><p style="text-align:center; font-size: 25px;"><?=$row['Product_Name'];?></p></td>
                         <td><p style="text-align:center; font-size: 20px;"><?=$row['Price'];?></p></td>
                         </div>
-                        <br><br>
                         <div style="text-align: center;">
                         <form action="cart.php" method="post">
 
-                        <a style="text-decoration: none;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">பெட்டகத்தில் சேர்</a>
+                        <a style="text-decoration: none; background-color: #FFFFFF; color: #EBA442;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">பெட்டகத்தில் சேர்</a>
                         </form>
                         </div>
                         </div>
