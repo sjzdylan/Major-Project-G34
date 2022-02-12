@@ -71,10 +71,11 @@ body{
     width: 500px;
     background-color: #FFBF66;
     margin-right: 60px;
+    margin-top: 52px;
 }
 
 .slideshow:hover{
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 
@@ -265,7 +266,7 @@ function showSlides() {
                         <div style="text-align: center;">
                         <form action="cart.php" method="post">
 
-                        <a style="text-decoration: none; background-color: #FFFFFF; color: #EBA442;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">加入购物车</a>
+                        <a style="text-decoration: none; background-color: #FFFFFF; color: #EBA442;" href="chicart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">加入购物车</a>
                         </form>
                         </div>
                         </div>

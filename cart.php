@@ -23,6 +23,10 @@ else{
     <body>
         
         <style>
+
+body{
+    background-color: #FFBF66;
+}
             ul {
                 list-style-type: none;
                 margin: 0;
@@ -52,9 +56,9 @@ else{
                 display: block;
                 color: #9b9b9b;
                 text-align: center;
-                padding: 8px 20px;
+                padding: 8px 12px;
                 text-decoration: none;
-                font-size: 20px;
+                font-size: 12px;
 
 
             }
@@ -78,7 +82,7 @@ else{
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 20px;
+                font-size: 14px;
                 border-radius: 2px;
             }
 
@@ -141,14 +145,14 @@ $fetchdata = $database->getReference($ref_table1)->getValue();
 ?>
 
    <br>
-    <div style="width: 1170px; margin: auto;">
-    <h1 class="w3-container w3-xlarge">CART</h1>
+    <div style="width: 1170px; margin: auto; font-size: 30px;">
+    <h1 style="margin-left: 15px;">CART</h1>
     <?php
     if($fetchdata > 0)
 {
     ?>
   
-  <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT ITEMS IN THE CART</p>
+  <p class="w3-container" style="color: #000000; font-size: 20px;">YOU'VE GOT ITEMS IN THE CART</p>
 
   <?php
 }
@@ -156,7 +160,7 @@ else
 {
     ?>
 
-    <p class="w3-container" style="color: #9b9b9b">YOU'VE GOT NO ITEMS IN THE CART</p>
+    <p class="w3-container" style="color: #000000; font-size: 20px;">YOU'VE GOT NO ITEMS IN THE CART</p>
 
     <?php
 }
@@ -164,16 +168,16 @@ else
     <table>
 
 <tr>
-    <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+    <td style="width: 117px; border-bottom: 1px solid #F0F0F0;" id="Image">
         <p style="font-size: 20px; text-align:center;">IMAGE</p>
     </td>
-    <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
+    <td style="width: 451px; border-bottom: 1px solid #F0F0F0;" id="Product_Name">
         <p style="font-size: 20px; text-align:left;">PRODUCT</p>
     </td>
-    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;" id="quantity">
         <p style="font-size: 20px; text-align:left;">QUANTITY</p>
     </td>
-    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;" id=Price">
         <p style="font-size: 20px; text-align:left;">SUBTOTAL</p>
     </td>
     <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
@@ -198,17 +202,21 @@ if($fetchdata > 0)
         </td>
         
         <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px; text-align:left;"><?=$row['Product_Name'];?> </p>
+        <p><?=$row['Product_Name'];?></p>
         </td>
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px; text-align:left;"><?=$row['Quantity'];?> </p>
+  <label for="quantity">Quantity:</label>
+  <form>
+  <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required)> 
+</form>
+
         </td>
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px; text-align:left;"><?=$row['Price'];?> </p>
+        <?=$row['Price'];?>
         </td>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0; ">
+        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
         <form action="cart.php" method="post">
             <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart">Remove</button>
         </form>
@@ -227,10 +235,6 @@ else
     <?php
 }
 ?>
-
-  
- 
- 
   
     <br>
     <?php 
@@ -243,7 +247,7 @@ else
     ?>
     <br>
     <form action="checkout.php" method="post">
-    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
+    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit" method="post">Checkout</a>
     </form>
     <?php
         }
@@ -251,25 +255,9 @@ else
     }
     else{
         ?> 
-            <p style="font-size: 20px;">You do not have a payment method associated with the account</p>
+            <p style="font-size: 20px;">You do not have a payment methood associated with the account</p>
             <p style="font-size: 20px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
-            <?php
-            if($_SESSION['address'] != ""){
-            
-            ?>    
-            <p style="font-size: 20px;">OR</p>
-            <p style="font-size: 20px;">Pay cash on delivery</p>
-            <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
-            <?php
-            }
-            else{
-                ?>
-            <p style="font-size: 20px;">You do not have an address associated with the account</p>
-            <p style="font-size: 20px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
-        <?php   
-        }
-           
-        ?>
+        
         <?php
     }
     ?>

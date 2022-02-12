@@ -206,8 +206,11 @@ if($fetchdata > 0)
         </td>
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <?=$row['Quantity'];?>
-        </td>
+  <label for="quantity">KUANTITI:</label>
+  <form>
+  <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required)> 
+</form>
+
 
         <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
         <?=$row['Price'];?>

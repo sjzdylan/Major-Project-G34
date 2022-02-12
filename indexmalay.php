@@ -71,10 +71,11 @@ body{
     width: 500px;
     background-color: #FFBF66;
     margin-right: 60px;
+    margin-top: 52px;
 }
 
 .slideshow:hover{
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 
@@ -261,7 +262,7 @@ function showSlides() {
                         <td><p style="text-align:center; font-size: 20px;"><?=$row['Price'];?></p></td>
                         </div>
                         <div style="text-align: center;">
-                        <form action="cart.php" method="post">
+                        <form action="malaycart.php" method="post">
 
                         <a style="text-decoration: none; background-color: #FFFFFF; color: #EBA442;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Tambah ke troli
 </a>

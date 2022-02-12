@@ -69,24 +69,11 @@ body{
     width: 500px;
     background-color: #FFBF66;
     margin-right: 60px;
+    margin-top: 52px;
 }
 
 .slideshow:hover{
-  transform: scale(1.5);
-}
-
-.img-magnifier-container {
-  position:relative;
-}
-
-.img-magnifier-glass {
-  position: absolute;
-  border: 3px solid #000;
-  border-radius: 50%;
-  cursor: none;
-  /*Set the size of the magnifier glass:*/
-  width: 100px;
-  height: 100px;
+  transform: scale(1.2);
 }
 
 
@@ -219,25 +206,21 @@ img {vertical-align: middle;}
 <div class="mySlides fade"  id="myimage">
   <div class="numbertext">1 / 4</div>
   <img src="images/strongpweng.jpg" style="width:100%; border: solid;">
-  <div class="text">skidiki</div>
 </div>
 
 <div class="mySlides fade" id="myimage">
   <div class="numbertext">2 / 4</div>
   <img src="images/phisheng.jpg" style="width:100%; border: solid;">
-  <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade" id="myimage">
   <div class="numbertext">3 / 4</div>
   <img src="images/antieng.jpg" style="width:100%; border: solid;">
-  <div class="text">Caption Three</div>
 </div>
 
 <div class="mySlides fade" id="myimage">
   <div class="numbertext">4 / 4</div>
   <img src="images/updateeng.jpg" style="width:100%; border: solid;">
-  <div class="text">Caption Three</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -250,12 +233,12 @@ img {vertical-align: middle;}
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
 </div>
 
 
 <script>
-var slideIndex = 0;
+var slideIndex = 1;
 showSlides();
 
 function showSlides() {
@@ -263,7 +246,7 @@ function showSlides() {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
@@ -272,6 +255,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000);
 }
 
 </script>
@@ -324,10 +308,11 @@ function showSlides() {
           </div>
 
 
+          <div>
 <?php
 include('footer.php');
 ?>
-
+</div>
 </body>
 
 
