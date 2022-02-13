@@ -175,10 +175,10 @@ else
         <p style="font-size: 20px; text-align:left;">产品</p>
     </td>
     <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px; text-align:left;">数量</p>
+        <p style="font-size: 20px; text-align:left;">总共价钱</p>
     </td>
     <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px; text-align:left;">总共价钱</p>
+        <p style="font-size: 20px; text-align:left;">数量</p>
     </td>
     <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 20px; text-align:left;">拆除</p>
@@ -195,36 +195,32 @@ if($fetchdata > 0)
     {
         ?>
 
-<table>
+    <table>
     <tr>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0; text-align:center;">
+        <td style="width: 117px; border-bottom: 1px solid black; text-align:center;">
         <img class="productimage" src="<?=$row['Image'];?>"><img>
         </td>
         
-        <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 451px; border-bottom: 1px solid black;">
         <p><?=$row['Product_Name'];?></p>
         </td>
 
-        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-  <label for="quantity">数量:</label>
-  <form>
-  <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required)> 
-</form>
-
-        </td>
-
-        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 234px; border-bottom: 1px solid black;">
         <?=$row['Price'];?>
         </td>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        
+        <td style="width: 351px; border-bottom: 1px solid black; ">
         <form action="cart.php" method="post">
-            <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart">拆除</button>
+            <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart" style="float: right; margin-top:18px; margin-right: 30px;" >拆除</button>
         </form>
+        
+        <form action="checkout.php?id=<?=$key; ?>" method="post">
+     
+        <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required style="float: left; margin-top:8px;"> 
         </td>
     </tr>
 
     </table>
-
         <?php
     }
 }
@@ -251,7 +247,7 @@ else
     ?>
     <br>
     <form action="checkout.php" method="post">
-    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
+    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">查看</a>
     </form>
     <?php
         }
@@ -261,7 +257,24 @@ else
         ?> 
             <p style="font-size: 20px;">您没有与该帐户关联的付款方式</p>
             <p style="font-size: 20px;"><a href="paymentmethod.php" class="w3-hover-opacity">添加付款方式</a></p>
-        
+
+            <?php
+            if($_SESSION['address'] != ""){
+            
+            ?>    
+            <p style="font-size: 20px;">或者</p>
+            <p style="font-size: 20px;">货到付款</p>
+            <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
+            <?php
+            }
+            else{
+                ?>
+            <p style="font-size: 20px;">您没有与该帐户关联的地址</p>
+            <p style="font-size: 20px;"><a href="address.php" class="w3-hover-opacity">添加地址</a></p>
+        <?php   
+        }
+           
+        ?>
         <?php
     }
     ?>

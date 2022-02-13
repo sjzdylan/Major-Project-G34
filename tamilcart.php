@@ -175,10 +175,10 @@ else
         <p style="font-size: 20px; text-align:left;">தயாரிப்பு</p>
     </td>
     <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px; text-align:left;">அளவு</p>
+        <p style="font-size: 20px; text-align:left;">கூட்டுத்தொகை</p>
     </td>
     <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-        <p style="font-size: 20px; text-align:left;">கூட்டுத்தொகை</p>
+        <p style="font-size: 20px; text-align:left;">அளவு</p>
     </td>
     <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
     <p style="font-size: 20px; text-align:left;">அகற்று</p>
@@ -195,28 +195,28 @@ if($fetchdata > 0)
     {
         ?>
 
-<table>
+    <table>
     <tr>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0; text-align:center;">
+        <td style="width: 117px; border-bottom: 1px solid black; text-align:center;">
         <img class="productimage" src="<?=$row['Image'];?>"><img>
         </td>
         
-        <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 451px; border-bottom: 1px solid black;">
         <p><?=$row['Product_Name'];?></p>
         </td>
-        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-  <label for="quantity">அளவு:</label>
-  <form>
-  <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required)> 
-</form>
 
-        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 234px; border-bottom: 1px solid black;">
         <?=$row['Price'];?>
         </td>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        
+        <td style="width: 351px; border-bottom: 1px solid black; ">
         <form action="cart.php" method="post">
-            <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart">அகற்று</button>
+            <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart" style="float: right; margin-top:18px; margin-right: 30px;" >அகற்று</button>
         </form>
+        
+        <form action="checkout.php?id=<?=$key; ?>" method="post">
+     
+        <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required style="float: left; margin-top:8px;"> 
         </td>
     </tr>
 
@@ -247,8 +247,8 @@ else
         if($fetchdata > 0){
     ?>
     <br>
-    <form action="checkout.php" method="post">
-    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">சரிபார்</a>
+    
+    <input class="loginbutton" name="checkout" type="submit" value="Checkout">
     </form>
     <?php
         }
@@ -258,7 +258,24 @@ else
         ?> 
             <p style="font-size: 20px;">கணக்குடன் தொடர்புடைய கட்டண முறை உங்களிடம் இல்லை</p>
             <p style="font-size: 20px;"><a href="paymentmethod.php" class="w3-hover-opacity">கட்டண முறையைச் சேர்க்கவும்</a></p>
-        
+
+            <?php
+            if($_SESSION['address'] != ""){
+            
+            ?>    
+            <p style="font-size: 20px;">அல்லது</p>
+            <p style="font-size: 20px;">டெலிவரிக்கு பணம் செலுத்துங்கள்</p>
+            <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">சரிபார்</a>
+            <?php
+            }
+            else{
+                ?>
+            <p style="font-size: 20px;">கணக்குடன் தொடர்புடைய முகவரி உங்களிடம் இல்லை</p>
+            <p style="font-size: 20px;"><a href="address.php" class="w3-hover-opacity">முகவரியைச் சேர்க்கவும்</a></p>
+        <?php   
+        }
+           
+        ?>
         <?php
     }
     ?>
