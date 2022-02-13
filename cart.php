@@ -168,19 +168,19 @@ else
     <table>
 
 <tr>
-    <td style="width: 117px; border-bottom: 1px solid #F0F0F0;" id="Image">
+    <td style="width: 117px; border-bottom: 1px solid black;" id="Image">
         <p style="font-size: 20px; text-align:center;">IMAGE</p>
     </td>
-    <td style="width: 451px; border-bottom: 1px solid #F0F0F0;" id="Product_Name">
+    <td style="width: 451px; border-bottom: 1px solid black;" id="Product_Name">
         <p style="font-size: 20px; text-align:left;">PRODUCT</p>
     </td>
-    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;" id="quantity">
-        <p style="font-size: 20px; text-align:left;">QUANTITY</p>
-    </td>
-    <td style="width: 234px; border-bottom: 1px solid #F0F0F0;" id=Price">
+    <td style="width: 234px; border-bottom: 1px solid black;" id="quantity">
         <p style="font-size: 20px; text-align:left;">SUBTOTAL</p>
     </td>
-    <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+    <td style="width: 234px; border-bottom: 1px solid black;" id=Price">
+        <p style="font-size: 20px; text-align:left;">QUANTITY</p>
+    </td>
+    <td style="width: 117px; border-bottom: 1px solid black;">
     <p style="font-size: 20px; text-align:left;">REMOVE</p>
     </td>
     
@@ -197,29 +197,26 @@ if($fetchdata > 0)
 
 <table>
     <tr>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0; text-align:center;">
+        <td style="width: 117px; border-bottom: 1px solid black; text-align:center;">
         <img class="productimage" src="<?=$row['Image'];?>"><img>
         </td>
         
-        <td style="width: 451px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 451px; border-bottom: 1px solid black;">
         <p><?=$row['Product_Name'];?></p>
         </td>
 
-        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
-  <label for="quantity">Quantity:</label>
-  <form>
-  <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required)> 
-</form>
-
-        </td>
-
-        <td style="width: 234px; border-bottom: 1px solid #F0F0F0;">
+        <td style="width: 234px; border-bottom: 1px solid black;">
         <?=$row['Price'];?>
         </td>
-        <td style="width: 117px; border-bottom: 1px solid #F0F0F0;">
+        
+        <td style="width: 351px; border-bottom: 1px solid black; ">
         <form action="cart.php" method="post">
-            <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart">Remove</button>
+            <button class="loginbutton" type="submit" value="<?=$key;?>" name="removefromcart" style="float: right; margin-top:18px; margin-right: 30px;" >Remove</button>
         </form>
+        
+        <form action="checkout.php?id=<?=$key; ?>" method="post">
+     
+        <input type="number" id="quantity" name="quantity" min="1" max="10000" value="1" required style="float: left; margin-top:8px;"> 
         </td>
     </tr>
 
@@ -236,7 +233,7 @@ else
 }
 ?>
   
-    <br>
+  <br>
     <?php 
     error_reporting(0);
 
@@ -246,8 +243,8 @@ else
         if($fetchdata > 0){
     ?>
     <br>
-    <form action="checkout.php" method="post">
-    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit" method="post">Checkout</a>
+    
+    <input class="loginbutton" name="checkout" type="submit" value="Checkout">
     </form>
     <?php
         }
@@ -255,9 +252,25 @@ else
     }
     else{
         ?> 
-            <p style="font-size: 20px;">You do not have a payment methood associated with the account</p>
+            <p style="font-size: 20px;">You do not have a payment method associated with the account</p>
             <p style="font-size: 20px;"><a href="paymentmethod.php" class="w3-hover-opacity">Add Payment Method</a></p>
-        
+            <?php
+            if($_SESSION['address'] != ""){
+            
+            ?>    
+            <p style="font-size: 20px;">OR</p>
+            <p style="font-size: 20px;">Pay cash on delivery</p>
+            <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
+            <?php
+            }
+            else{
+                ?>
+            <p style="font-size: 20px;">You do not have an address associated with the account</p>
+            <p style="font-size: 20px;"><a href="address.php" class="w3-hover-opacity">Add Address</a></p>
+        <?php   
+        }
+           
+        ?>
         <?php
     }
     ?>
