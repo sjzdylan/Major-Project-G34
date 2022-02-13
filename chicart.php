@@ -246,8 +246,9 @@ else
         if($fetchdata > 0){
     ?>
     <br>
-    <form action="checkout.php" method="post">
-    <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">查看</a>
+
+    <input class="loginbutton" name="checkout" type="submit" value="查看">
+    </form>
     </form>
     <?php
         }
@@ -264,7 +265,7 @@ else
             ?>    
             <p style="font-size: 20px;">或者</p>
             <p style="font-size: 20px;">货到付款</p>
-            <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">Checkout</a>
+            <a style="text-decoration: none;" href="checkout.php?id=<?=$key; ?>" class="loginbutton" name="checkout" type="submit">查看</a>
             <?php
             }
             else{
