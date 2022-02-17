@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include('dbcon.php');
 use Firebase\Auth\Token\Exception\InvalidToken;
 

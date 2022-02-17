@@ -1,5 +1,6 @@
 <?php
 session_start();
+ob_start();
 include('dbcon.php');
 // try to implement checking of current password to change new password.
 

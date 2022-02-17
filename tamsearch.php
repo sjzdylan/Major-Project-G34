@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+ob_start();
 include("dbcon.php");
 include('tamilnavbar.php');
    
@@ -53,7 +53,7 @@ include('tamilnavbar.php');
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
-                height: 45px;
+                height: 48px;
                 
             }
 

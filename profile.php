@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+ob_start();
 include('dbcon.php');
 
 if (isset($_SESSION['email'])) {

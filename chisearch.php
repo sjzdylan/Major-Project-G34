@@ -1,5 +1,6 @@
 <?php 
 session_start();
+ob_start();
 
 include("dbcon.php");
 include('chinavbar.php');
@@ -53,7 +54,7 @@ include('chinavbar.php');
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
-                height: 45px;
+                height: 48px;
                 
             }
 
@@ -97,7 +98,7 @@ include('chinavbar.php');
     <div class="box">
         <form action ="chisearched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="输入您要寻找的产品" />
-            <input class="submitbutton searchbutton" type="submit" name="searched" value="搜索！" />
+            <input class="submitbutton searchbutton" type="submit" name="searched" value="搜索!" />
         </form>
     </div>
     </div>

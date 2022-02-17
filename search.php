@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+ob_start();
 include("dbcon.php");
 include('navbar.php');
    
@@ -24,9 +24,13 @@ include('navbar.php');
                 box-sizing: border-box;
             }
 
+            body{
+            background-color: #FFBF66;
+            }
+
             .productimage{
                 height: 300px;
-                width: 289.8px;
+                width: 292.5px;
             }
 
             .card1{
@@ -53,7 +57,7 @@ include('navbar.php');
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
-                height: 45px;
+                height: 48px;
                 
             }
 
@@ -63,7 +67,7 @@ include('navbar.php');
                 border: none;
                 cursor: pointer;
                 padding: 4px 10px;
-                font-size: 14px;
+                font-size: 20px;
                 border-radius: 2px;
                 
             }
@@ -84,13 +88,10 @@ include('navbar.php');
                 border: 1px solid #ccc;
             }
             
-            body{
-            background-color: #FFBF66;
-            }
         </style>
 
     <br>
-    <div class="w3-container w3-DarkOrange" style="width: 1170px; margin: auto;">
+    <div class="w3-container w3-DarkOrange" style="width: 1300px; margin: auto; padding-left: 70px;">
     <h1 style="font-size: 40px; font-weight: bold;">SEARCH</h1>
     <p style="font-size: 20px;">ENTER THE PRODUCT NAME THAT YOU ARE SEARCHING FOR</p>
     <br>

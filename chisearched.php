@@ -1,5 +1,6 @@
 <?php 
 session_start();
+ob_start();
 
 include("dbcon.php");
 include('chinavbar.php');
@@ -21,8 +22,8 @@ include('chinavbar.php');
         
         <style>
 
-body{
-            background-color: #FFBF66;
+            body{
+                background-color: #FFBF66;
             }
             *{
                 box-sizing: border-box;
@@ -30,16 +31,20 @@ body{
 
             .productimage{
                 height: 300px;
-                width: 292.5px;
+                width: 287px;
+                align: center;
             }
 
             .card1{
                 transition: 0.5s;
                 height: 600px;
                 width: 292.5px;
+                border-color: #FFBF66;
+                border-style: solid;
+                background-color: #FFFFFF;
             }
             .card1:hover{
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                box-shadow: 0px 8px 16px 2px #D10505;
             }
             .container1{
                 padding: 2px 16px;
@@ -53,7 +58,7 @@ body{
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
-                height: 45px;
+                height: 48px;
                 
             }
 
@@ -87,14 +92,14 @@ body{
         </style>
 
     <br>
-    <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h1 style="font-size:30px;">搜索</h1>
+    <div class="w3-container w3-DarkOrange" style="width: 1300px; margin: auto; padding-left: 70px;">
+    <h1 style="font-size:40px; font-weight: bold;">搜索</h1>
     <p style="color: #000000; font-size: 20px;">您可能正在寻找的产品</p>
     <br>
     <div class="box">
         <form action ="chisearched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="您可能正在寻找的产品" />
-            <input class="submitbutton loginbutton" type="submit" name="searched" value="搜索!" />
+            <input class="submitbutton searchbutton" type="submit" name="searched" value="搜索!" />
         </form>
     </div>
 
@@ -117,21 +122,20 @@ body{
                 foreach($queryfound as $key => $row)
                 {
     ?>      
-                <div class="card1 w3-col l3 s6">
-                <tr style="font-size: 20px">
-                <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
-                <div class="container1">
-                    <td><p style="text-align:center; font-size: 30px;"><?=$row['Product_Name'];?></p></td>
-                <td><p style="text-align:center; font-size: 20px;"><?=$row['Price'];?></p></td>
-                </div>
-                <br><br>
-                <div style="text-align: center;">
-                <form action="cart.php" method="post">
+                <div style="width:295px;" class="card1 w3-col l3 s6">
+                        <tr style="font-size: 20px">
+                        <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
+                        <div class="container1">
+                            <td><p style="text-align:center; font-size: 25px;"><?=$row['Product_Name'];?></p></td>
+                        <td><p style="text-align:center; font-size: 20px;"><?=$row['Price'];?></p></td>
+                        </div>
+                        <div style="text-align: center;">
+                        <form action="cart.php" method="post">
 
-                <a style="text-decoration: none; font-size: 20px;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">加入购物车</a>
-                </form>
-                </div>
-                </div>
+                        <a style="text-decoration: none; background-color: #FFFFFF; color: #EBA442; text-align: bottom;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Add to Cart </a>
+                        </form>
+                        </div>
+                        </div>
                        
                     <?php
                 }

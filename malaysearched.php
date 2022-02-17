@@ -1,6 +1,6 @@
 <?php 
 session_start();
-
+ob_start();
 include("dbcon.php");
 include('malaynavbar.php');
    
@@ -22,7 +22,7 @@ include('malaynavbar.php');
         <style>
 
 body{
-            background-color: #FFBF66;
+                background-color: #FFBF66;
             }
             *{
                 box-sizing: border-box;
@@ -30,16 +30,20 @@ body{
 
             .productimage{
                 height: 300px;
-                width: 292.5px;
+                width: 287px;
+                align: center;
             }
 
             .card1{
                 transition: 0.5s;
                 height: 600px;
                 width: 292.5px;
+                border-color: #FFBF66;
+                border-style: solid;
+                background-color: #FFFFFF;
             }
             .card1:hover{
-                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+                box-shadow: 0px 8px 16px 2px #D10505;
             }
             .container1{
                 padding: 2px 16px;
@@ -53,7 +57,7 @@ body{
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
-                height: 45px;
+                height: 48px;
                 
             }
 
@@ -65,6 +69,7 @@ body{
                 padding: 4px 10px;
                 font-size: 14px;
                 border-radius: 2px;
+                height: 45px;
                 
             }
 
@@ -87,14 +92,14 @@ body{
         </style>
 
     <br>
-    <div class="w3-container" style="width: 1170px; margin: auto;">
-    <h1 style="font-size:30px;">CARIAN</h1>
+    <div class="w3-container w3-DarkOrange" style="width: 1300px; margin: auto; padding-left: 70px;">
+    <h1 style="font-size:40px; font-weight: bold;">CARIAN</h1>
     <p style="color: #000000; font-size: 20px;">SENARAI PRODUK YANG MUNGKIN ANDA CARI</p>
     <br>
     <div class="box">
         <form action ="searched.php" method="get">
             <input class="searchfield" type="text" id="Search" name="Search" placeholder="MASUKKAN NAMA PRODUK YANG ANDA CARI.." />
-            <input class="submitbutton loginbutton" type="submit" name="searched" value="CARIAN!" />
+            <input class="submitbutton searchbutton" type="submit" name="searched" value="CARIAN!" />
         </form>
     </div>
 
@@ -117,21 +122,20 @@ body{
                 foreach($queryfound as $key => $row)
                 {
     ?>      
-                <div class="card1 w3-col l3 s6">
-                <tr style="font-size: 20px">
-                <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
-                <div class="container1">
-                    <td><p style="text-align:center; font-size: 30px;"><?=$row['Product_Name'];?></p></td>
-                <td><p style="text-align:center; font-size: 20px;"><?=$row['Price'];?></p></td>
-                </div>
-                <br><br>
-                <div style="text-align: center;">
-                <form action="cart.php" method="post">
+                <div style="width:295px;" class="card1 w3-col l3 s6">
+                        <tr style="font-size: 20px">
+                        <td><img class="productimage" src="<?=$row['Image'];?>"><img></td>
+                        <div class="container1">
+                            <td><p style="text-align:center; font-size: 25px;"><?=$row['Product_Name'];?></p></td>
+                        <td><p style="text-align:center; font-size: 20px;"><?=$row['Price'];?></p></td>
+                        </div>
+                        <div style="text-align: center;">
+                        <form action="cart.php" method="post">
 
-                <a style="text-decoration: none; font-size: 20px;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Tambah ke Troli</a>
-                </form>
-                </div>
-                </div>
+                        <a style="text-decoration: none; background-color: #FFFFFF; color: #EBA442; text-align: bottom;" href="cart.php?id=<?=$key; ?>" class="loginbutton" name="addtocart" type="submit">Add to Cart </a>
+                        </form>
+                        </div>
+                        </div>
                        
                     <?php
                 }

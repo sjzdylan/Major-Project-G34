@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-
+ob_start();
 include('navbar.php');
 
 include('dbcon.php');
