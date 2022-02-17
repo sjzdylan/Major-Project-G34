@@ -9,7 +9,6 @@ else{
 }
 
 include("dbcon.php");
-include("navbar.php");
 require "Authenticator.php";
 
 
@@ -52,9 +51,24 @@ if (!isset($_SESSION['failed'])){
             font-size: 30px;
         }
 
-
-        
+        .loginbutton {
+            background-color: transparent;
+            background-repeat: no-repeat;
+            color: black;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            outline: none;
+            padding: 4px 10px;
+            font-size: 14px;
+            border-radius: 2px;
+            display:block;
+            margin: 0 auto;
+        }
     </style>
+    <div style="background-color: #EBA442; padding-left: 50px; fontsize: 80px; border-bottom-style: solid; text-align:center; letter-spacing: 9px;">
+        <b><a style=" font-size: 40px;">MPG34SECUREGROCERIES</a></b>
+    </div>
 </head>
 <body  class="bg">
     <div class="container">
@@ -77,14 +91,26 @@ if (!isset($_SESSION['failed'])){
                         <?php
                         endif
                         ?>
-                            <img width="70%" style="text-align: center;" class="img-fluid" src="<?php print_r($qrCode) ?>" alt="Verify this Google Authenticator"><br><br>        
-                            <input type="text" class="form-control" name="code" placeholder="******" style="font-size: xx-large; width: 300px; height: 70px; border-radius: 0px;text-align: center; display: inline;color: #0275d8;"><br> <br>    
-                            <button type="submit" class="btn btn-md btn-primary" style="width: 300px; border-radius: 0px; height: 75px;">Verify</button>
-
+                        <img width="70%" style="text-align: center;" class="img-fluid" src="<?php print_r($qrCode) ?>" alt="Verify this Google Authenticator"><br><br>        
+                        <input type="text" class="form-control" name="code" placeholder="******" style="font-size: xx-large; width: 300px; height: 70px; border-radius: 0px;text-align: center; display: inline;color: #0275d8;"><br> <br>    
+                        <button type="submit" class="btn btn-md btn-primary" style="width: 300px; border-radius: 0px; height: 75px;">Verify</button>
                     </div>
 
                 </form>
-
+                <script>
+                function confirmDisable(){
+                    if(confirm("Are you sure you want to cancel 2FA activation for your account?") == true){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                </script>
+                <br>
+                <form method="POST" action="2fadisable.php" onsubmit="return confirmDisable()">
+                <br>
+                <button class="loginbutton" name="disable2fa" type="submit" style="text-decoration: underline; font-size: 25px;">Cancel 2FA activation</button>
             </div>
         </div>
     </div>

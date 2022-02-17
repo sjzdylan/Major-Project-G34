@@ -10,7 +10,6 @@ else{
 }
 
 include("dbcon.php");
-include("navbar.php");
 require "Authenticator.php";
 
 
@@ -51,6 +50,9 @@ if (!isset($_SESSION['failed'])){
 
         
     </style>
+    <div style="background-color: #EBA442; padding-left: 50px; fontsize: 80px; border-bottom-style: solid; text-align:center; letter-spacing: 9px;">
+        <b><a style=" font-size: 40px;">MPG34SECUREGROCERIES</a></b>
+    </div>
 </head>
 <body  class="bg">
     <div class="container">
@@ -75,6 +77,9 @@ if (!isset($_SESSION['failed'])){
                         ?>      
                             <input type="text" class="form-control" name="code" placeholder="******" style="font-size: xx-large; width: 300px; height: 70px; border-radius: 0px;text-align: center; display: inline;color: #0275d8;"><br> <br>    
                             <button type="submit" class="btn btn-md btn-primary" style="width: 300px; border-radius: 0px; height: 75px;">Verify</button>
+                            <br>
+                            <br>
+                            <a href="logout.php" style="text-decoration: underline">Go back to login page</a>
 
                     </div>
 
